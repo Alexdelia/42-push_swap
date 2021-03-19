@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/03/19 20:33:02 by adelille         ###   ########.fr        #
+#    Updated: 2021/03/19 20:56:22 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ checker: $(LBM)
 	@mkdir $(OBJSPATH_CH) 2> /dev/null || true
 	@$(CC) -I$(INC) $(LBINC) -c $(SRCS_CH)
 	@mv *.o $(OBJSPATH_CH)
-	@$(CC) $(OBJS_CH) $(LBNAME) -L$(LBPATH) $(LBINC) -I$(INC) -o $(CH)
+	$(CC) $(OBJS_CH) $(LBNAME) -L$(LBPATH) $(LBINC) -I$(INC) -o $(CH)
 	@echo "$(B)$(MAG)$(BEL)\n\t$(CH)\tcompiled!\n$(D)"
 
 push_swap: $(LBM)
@@ -86,7 +86,7 @@ push_swap: $(LBM)
 	@echo "$(B)$(MAG)$(BEL)\n\t$(PS)\tcompiled!\n$(D)"
 
 $(LBM):
-	@make -C $(LBPATH) -f Makefile
+	@make bonus -C $(LBPATH) -f Makefile
 
 lib:	$(LIBFTM)
 	@echo "$(B)$(MAG)$(BEL)Libft compiled.$(D)"
