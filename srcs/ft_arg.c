@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:35:30 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/19 16:21:07 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/19 18:38:49 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 
 int		ft_is_int(char *s)
 {
+	int	len;
 	int	i;
 
 	i = 0;
+	len = x;
+	if (s[0] == '-')
+		len = x+1
 	while (s[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))

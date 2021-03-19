@@ -6,11 +6,11 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/03/19 14:43:33 by adelille         ###   ########.fr        #
+#    Updated: 2021/03/19 16:29:07 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 	
+# NAME =
 CC = 	clang -Wall -Werror -Wextra
 RM = 	rm -rf
 # FLAGS =	-O2
@@ -41,23 +41,25 @@ LBINC =		-I$(LBPATH)
 
 # **************************************************************************** #
 
-SRCSPATH =	./srcs/
-OBJSPATH =	./objs/
-INC =		./includes/
+SRCSPATH =		./srcs/
+OBJSPATH_CH =	./objs_checker/
+OBJSPATH_PS =	./objs_push_swap/
+INC =			./includes/
 
-SRCSNAME = main.c \
-			ft_random/ft_linear_congruential_generator.c \
-			ft_use_of_random/ft_find_period.c \
-			ft_use_of_random/ft_perf.c \
-			ft_use_of_random/ft_map_debug.c \
-			ft_use_of_random/ft_binary_show.c \
-			ft_arg.c \
-			ft_utils.c
+# will use another tech
+SRCSNAME_CH = checker.c \
 
-SRCS = $(addprefix $(SRCSPATH), $(SRCSNAME))
-OBJSNAME = $(SRCSNAME:.c=.o)
+SRCS_CH = $(addprefix $(SRCSPATH), $(SRCSNAME_CH))
+OBJSNAME_CH = $(SRCSNAME_CH:.c=.o)
 #OBJS = $(addprefix $(OBJSPATH), $(OBJSNAME))
-OBJS = $(OBJSPATH)*.o
+OBJS_CH = $(OBJSPATH_CH)*.o
+
+SRCS_PS = push_swap.c
+
+SRCS_PS = $(addprefix $(SRCSPATH), $(SRCSNAME_PS))
+OBJSNAME_PS = $(SRCSNAME_PS:.c=.o)
+#OBJS = $(addprefix $(OBJSPATH), $(OBJSNAME))
+OBJS_PS = $(OBJSPATH_PS)*.o
 
 # *************************************************************************** #
 
