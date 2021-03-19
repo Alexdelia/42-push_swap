@@ -6,11 +6,13 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/03/19 18:55:06 by adelille         ###   ########.fr        #
+#    Updated: 2021/03/19 20:33:02 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# NAME =
+# NAME =	
+CH =	checker
+PS =	push_swap
 CC = 	clang -Wall -Werror -Wextra
 RM = 	rm -rf
 # FLAGS =	-O2
@@ -38,6 +40,7 @@ CLR =	$(shell tput el 1)
 LBPATH =	./libft/
 LBNAME =	$(LBPATH)libft.a
 LBINC =		-I$(LBPATH)
+LBM =		libm
 
 # **************************************************************************** #
 
@@ -46,7 +49,6 @@ OBJSPATH_CH =	./objs_checker/
 OBJSPATH_PS =	./objs_push_swap/
 INC =			./includes/
 
-# will use another tech
 SRCSNAME_CH = checker.c \
 				ft_arg.c \
 				ft_utils.c \
@@ -65,33 +67,48 @@ OBJS_PS = $(OBJSPATH_PS)*.o
 
 # *************************************************************************** #
 
-all:
-	@make -C $(LBPATH)
-	@mkdir $(OBJSPATH) 2> /dev/null || true
-	@$(CC) -I$(INC) -c $(SRCS)
-	@mv *.o $(OBJSPATH)
-	@$(CC) $(OBJS) $(LBNAME) -L$(LBPATH) $(LBINC) -I$(INC) -o $(NAME)
-	@echo "$(B)$(MAG)$(BEL)\n\tpush_swap(2 exe)\tcompiled!\n$(D)"
+all: $(NAME)
 
-$(LIBFTM):
+$(NAME): checker push_swap
+
+checker: $(LBM)
+	@mkdir $(OBJSPATH_CH) 2> /dev/null || true
+	@$(CC) -I$(INC) $(LBINC) -c $(SRCS_CH)
+	@mv *.o $(OBJSPATH_CH)
+	@$(CC) $(OBJS_CH) $(LBNAME) -L$(LBPATH) $(LBINC) -I$(INC) -o $(CH)
+	@echo "$(B)$(MAG)$(BEL)\n\t$(CH)\tcompiled!\n$(D)"
+
+push_swap: $(LBM)
+	@mkdir $(OBJSPATH_PS) 2> /dev/null || true
+	@$(CC) -I$(INC) $(LBINC) -c $(SRCS_PS)
+	@mv *.o $(OBJSPATH_PS)
+	@$(CC) $(OBJS_PS) $(LBNAME) -L$(LBPATH) $(LBINC) -I$(INC) -o $(PS)
+	@echo "$(B)$(MAG)$(BEL)\n\t$(PS)\tcompiled!\n$(D)"
+
+$(LBM):
 	@make -C $(LBPATH) -f Makefile
 
-libft:	$(LIBFTM)
-	@echo "$(B)Libft compiled.$(D)"
+lib:	$(LIBFTM)
+	@echo "$(B)$(MAG)$(BEL)Libft compiled.$(D)"
 
 clean:
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJS_CH) $(OBJS_PS)
 	@make -C $(LBPATH) -f Makefile clean
-	@rmdir $(OBJSPATH) 2> /dev/null || true
+	@rmdir $(OBJSPATH_CH) 2> /dev/null || true
+	@rmdir $(OBJSPATH_PS) 2> /dev/null || true
 	@echo "$(B)Cleared.$(D)"
 
 
 fclean: clean
-	@$(RM) $(NAME) $(MLXM)
+	@$(RM) $(CH) $(PS)
 	@make -C $(LBPATH) -f Makefile fclean
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re, libft
+norm:
+	norminette $(SRCSPATH)
+	norminette $(INC)
+
+.PHONY: all, clean, fclean, re, lib, norm, checker, push_swap
 
 # **************************************************************************** #
