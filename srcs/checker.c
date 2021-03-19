@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:05:46 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/19 20:44:13 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/19 21:10:01 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 void	ft_pl(t_list *a)
 {
-	ft_ps(ft_itoa(a->data));
-	a = a->next;
+	while (a)
+	{
+		ft_ps(ft_itoa(a->data));
+		ft_ps("\n");
+		a = a->next;
+	}
 }
 
+// int overflow bad handled
 int		main(int ac, char **av)
 {
 	t_list	*a;

@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:35:30 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/19 20:45:25 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/19 21:08:37 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int			ft_arg(int ac, char **av, t_list *a)
 	while (av[i])
 	{
 		if (ft_is_int(av[i]) == FALSE
-				&& ft_isnt_in(a, ft_atoi(av[i])) == FALSE)
+				|| ft_isnt_in(a, ft_atoi(av[i])) == FALSE)
 		{
 			return (ft_fret(&a));
 		}
