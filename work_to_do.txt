@@ -1,0 +1,8 @@
+1 - Create stack
+
+2 - Create function (sa, sb, ss, ...)
+
+3 - take argument (I guess, don't know exactly what it will look like at this
+point)
+
+4 - hope to enjoy (will create next work to do when the firsts are done)
