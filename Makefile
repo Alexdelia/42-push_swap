@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/03/19 20:56:22 by adelille         ###   ########.fr        #
+#    Updated: 2021/03/20 15:04:57 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,10 +105,6 @@ fclean: clean
 
 re: fclean all
 
-norm:
-	norminette $(SRCSPATH)
-	norminette $(INC)
-
-.PHONY: all, clean, fclean, re, lib, norm, checker, push_swap
+.PHONY: all, clean, fclean, re, lib, checker, push_swap
 
 # **************************************************************************** #
