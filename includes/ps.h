@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/20 14:29:29 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/20 14:52:03 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 
 # include <limits.h>
 # include "libft.h"
-
-# define TRUE 1
-# define FALSE 0
 
 int		ft_arg(int ac, char **av, t_list *a);
 

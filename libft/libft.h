@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/19 20:59:36 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/20 14:49:16 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+# define TRUE 1
+# define FALSE 0
+
 typedef	struct	s_list
 {
-	int				data;
+	void			*content;
 	struct s_list	*next;
 }				t_list;
 
@@ -64,17 +67,26 @@ void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
-// lst function have been adapted
-t_list			*ft_lstnew(int data);
+t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **alst, t_list *new);
 int				ft_lstsize(t_list *lst);
 t_list			*ft_lstlast(t_list *lst);
 void			ft_lstadd_back(t_list **alst, t_list *new);
-void			ft_lstdelone(t_list *lst);
-void			ft_lstclear(t_list **lst);
-void			ft_lstiter(t_list *lst, void (*f)(int));
-t_list			*ft_lstmap(t_list *lst, void *(*f)(int));
+void			ft_lstdelone(t_list *lst, void (*del)(void*));
+void			ft_lstclear(t_list **lst, void (*del)(void*));
+void			ft_lstiter(t_list *lst, void (*f)(void*));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void *));
+
+# define MAG	"\033[0;35m"
+# define BMAG	"\033[1;35m"
+# define IMAG	"\033[3;35m"
+# define BIMAG	"\033[1;3;35m"
+# define RED	"\033[1;31m"
+# define GRN	"\033[1;32m"
+# define SBLU	"\033[5;3;34m"
+# define DEF	"\033[0m"
 
 int				ft_ps(char *str);
+int				ft_psc(char *str, char *color);
 
 #endif
