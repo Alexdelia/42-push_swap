@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 16:46:28 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/17 18:30:16 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/20 15:33:06 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char	*ft_strdup(const char *s)
 	char	*str;
 	size_t	i;
 
-	if (!(str = (char*)malloc(sizeof(*s) * (ft_strlen(s) + 1))))
+	str = (char *)malloc(sizeof(*s) * (ft_strlen(s) + 1));
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (s[i])

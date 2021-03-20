@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 02:40:46 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/07 02:44:03 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/20 15:31:30 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str;
 	size_t	i;
 
-	if (!(str = ft_strdup(s)))
+	str = ft_strdup(s);
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (str[i])

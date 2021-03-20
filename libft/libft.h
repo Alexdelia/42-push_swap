@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/20 14:58:37 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/20 15:49:39 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@
 # define TRUE 1
 # define FALSE 0
 
-typedef	struct	s_list
+typedef struct s_list
 {
-	int				data;
+	void			*content;
 	struct s_list	*next;
-}				t_list;
+}					t_list;
 
-typedef struct	s_split_next
+typedef struct s_split_next
 {
-	size_t start;
-	size_t len;
-}				t_split_next;
+	size_t			start;
+	size_t			len;
+}					t_split_next;
 
 void			*ft_memset(void *s, int c, size_t len);
 void			ft_bzero(void *s, size_t n);

@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 02:56:13 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/17 11:29:48 by user42           ###   ########.fr       */
+/*   Updated: 2021/03/20 15:35:43 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_abs(int nbr)
 	return (nbr);
 }
 
-void		ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	str[13];
 	int		is_neg;

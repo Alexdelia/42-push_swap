@@ -6,7 +6,7 @@
 /*   By: user42 <adelille@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 13:31:45 by user42            #+#    #+#             */
-/*   Updated: 2021/03/19 21:02:35 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/20 15:52:00 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(int))
 	first = NULL;
 	while (lst)
 	{
-		if (!(new = ft_lstnew((int)(*f)(lst->data))))
+		new = ft_lstnew((int)(*f)(lst->data));
+		if (!new)
 		{
 			ft_lstclear(&first);
 			return (NULL);

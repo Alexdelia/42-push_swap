@@ -6,16 +6,16 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 13:09:31 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/20 14:50:19 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/20 15:36:02 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_ps(char *str)
+int	ft_ps(char *str)
 {
 	int	i;
-	
+
 	i = 0;
 	while (str[i])
 		i++;
@@ -23,7 +23,7 @@ int		ft_ps(char *str)
 	return (i);
 }
 
-int		ft_psc(char *str, char *color)
+int	ft_psc(char *str, char *color)
 {
 	write(1, color, ft_strlen(color));
 	write(1, str, ft_strlen(str));

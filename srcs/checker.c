@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/19 15:05:46 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/20 15:02:11 by adelille         ###   ########.fr       */
+/*   Created: 2021/03/20 15:05:39 by adelille          #+#    #+#             */
+/*   Updated: 2021/03/20 15:18:37 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_pl(t_list *a)
 }
 
 // int overflow bad handled
-int		main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_list	*a;
 

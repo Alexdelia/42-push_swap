@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:35:30 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/20 14:38:10 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/20 15:53:18 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	ft_isnt_in(t_list *lst, int nb)
 	return (TRUE);
 }
 
-int			ft_fret(t_list **a)
+int	ft_fret(t_list **a)
 {
 	ft_lstclear(a);
 	return (FALSE);
@@ -56,7 +56,7 @@ static int	ft_max_min_in(t_list *a, char *str)
 	return (TRUE);
 }
 
-int			ft_arg(int ac, char **av, t_list *a)
+int	ft_arg(int ac, char **av, t_list *a)
 {
 	int		i;
 
