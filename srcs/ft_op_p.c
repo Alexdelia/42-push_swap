@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_op_p.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/22 14:32:03 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/21 14:22:53 by adelille         ###   ########.fr       */
+/*   Created: 2021/03/21 15:34:32 by adelille          #+#    #+#             */
+/*   Updated: 2021/03/21 15:42:29 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ps.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_p(t_list **dst, t_list **src)
 {
-	size_t				i;
-	const unsigned char	*ns;
-
-	ns = s;
-	i = 0;
-	while (i < n)
-	{
-		if (!(*(ns + i) == (unsigned char)c))
-			return ((void *)(ns + i));
-		i++;
-	}
-	return (NULL);
+	if (!src || !src->data)
+		return (0);
+	ft_lstadd_front(src);
+	src = src->next;
+	return (0);
 }

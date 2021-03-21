@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/03/20 15:04:57 by adelille         ###   ########.fr        #
+#    Updated: 2021/03/21 15:00:02 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ INC =			./includes/
 SRCSNAME_CH = checker.c \
 				ft_arg.c \
 				ft_utils.c \
+				ft_checking.c \
 
 SRCS_CH = $(addprefix $(SRCSPATH), $(SRCSNAME_CH))
 OBJSNAME_CH = $(SRCSNAME_CH:.c=.o)

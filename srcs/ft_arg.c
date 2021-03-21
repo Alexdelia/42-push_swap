@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:35:30 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/20 15:53:18 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:25:27 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ int	ft_arg(int ac, char **av, t_list *a)
 {
 	int		i;
 
-	(void)ac;
+	if (ac == 1)
+		return (ft_error("Error: no parameters\n"));
 	i = 1;
 	if (av[1] && ft_is_int(av[1]) == TRUE)
 	{

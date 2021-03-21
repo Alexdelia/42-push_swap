@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/20 15:49:39 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:59:13 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "get_next_line.h"
 
 # define TRUE 1
 # define FALSE 0
 
 typedef struct s_list
 {
-	void			*content;
+	int				data;
 	struct s_list	*next;
 }					t_list;
 
