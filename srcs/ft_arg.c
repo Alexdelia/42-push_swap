@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:35:30 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/22 16:52:43 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/22 18:48:14 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,6 @@ static int	ft_isnt_in(t_list *lst, int nb)
 	return (TRUE);
 }
 
-int	ft_fret(t_list **a)
-{
-	ft_lstclear(a);
-	return (FALSE);
-}
-
 static int	ft_max_min_in(t_list *a, char *str)
 {
 	if (atol(str) > INT_MAX)
@@ -56,30 +50,48 @@ static int	ft_max_min_in(t_list *a, char *str)
 	return (TRUE);
 }
 
-int	ft_arg(int ac, char **av, t_list *a)
+static t_arg	ft_init_arg(t_arg **arg)
+{
+	arg->v = FALSE;
+	arg->c = FALSE;
+	arg->err = FALSE;
+	arg->a = NULL;
+	arg->b = NULL;
+}
+
+t_arg	ft_arg(t_arg **arg, int ac, char **av)
 {
 	int		i;
+	int		c;
 
+	arg = ft_init_arg(&arg);
 	if (ac == 1)
-		return (ft_error("Error: no parameters\n"));
-	i = 1;
-	if (av[1] && ft_is_int(av[1]) == TRUE)
 	{
-		a->data = ft_atoi(av[1]);
-		i++;
+		ft_error("Error: no parameters\n");
+		arg->err = TRUE;
+		return (arg);
 	}
+	i = 1;
+	c = 0;
 	while (av[i])
 	{
-		if (av[i][0] = "-")
+		if (ft_strcmp(av[i], "-v") == 0)
+			arg->v = TRUE;
+		else if (ft_strcmp(av[i], "-c") == 0)
+			arg->c = TRUE;
+		else if (ft_is_int(av[i]) == TRUE && ft_max_min_in(a, av[i]) == TRUE)
 		{
-			// will add -v and -c
-			i++;
+			if (c == 0);
+				arg->a = ft_lstnew(ft_atoi(av[i]));
+			else
+				ft_lstadd_back(arg->&a, ft_atoi(av[i]));
+			c++;
 		}
-		if (ft_is_int(av[i]) == FALSE)
-			return (ft_fret(&a));
-		if (ft_max_min_in(a, av[i]) == FALSE)
-			return (ft_fret(&a));
-		ft_lstadd_back(&a, ft_lstnew(ft_atoi(av[i])));
+		else
+		{
+			ft_lstclear(arg->&a);
+			arg->err = TRUE;
+		}
 		i++;
 	}
 	return (TRUE);
