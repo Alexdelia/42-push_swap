@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:35:30 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/21 14:25:27 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/22 16:52:43 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ int	ft_arg(int ac, char **av, t_list *a)
 	}
 	while (av[i])
 	{
+		if (av[i][0] = "-")
+		{
+			// will add -v and -c
+			i++;
+		}
 		if (ft_is_int(av[i]) == FALSE)
 			return (ft_fret(&a));
 		if (ft_max_min_in(a, av[i]) == FALSE)
