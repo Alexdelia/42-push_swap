@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 15:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/22 17:42:37 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/23 21:07:32 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,18 @@ void	ft_pl(t_list *a)
 
 int	main(int ac, char **av)
 {
-	t_arg	*arg;
+	t_arg	arg;
 
 	ft_psc("\nParsing ...\t", "\033[1;29m");
-	arg = ft_arg(&arg, ac, av);
-	if (arg->err == TRUE)
+	ft_arg(&arg, ac, av);
+	if (arg.err == TRUE)
 		return (0);
 	ft_psc("Done\n", GRN);
 	ft_psc("\nPlease enter the command:\n", "\033[1;29m");
 	if (ft_checking(&arg) == FALSE)
 		//WIP
 	//ft_pl(a);
-	ft_lstclear(arg->&a);
-	ft_lstclear(arg->&b);
+	ft_lstclear(&arg.a);
+	ft_lstclear(&arg.b);
 	return (0);
 }

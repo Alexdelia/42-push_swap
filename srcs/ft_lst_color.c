@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:29:46 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/23 20:07:48 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/23 20:15:26 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_lst_color(t_arg *arg, int ga, int gb)
 		else
 			ft_ps(ft_itoa(arg->a->data));
 		ft_ps("\t");
-		if (gb == i && arc->c == 1)
+		if (gb == i && arg->c == 1)
 			ft_psc(ft_itoa(arg->b->data), GRN);
 		else
 			ft_ps(ft_itoa(arg->b->data));
@@ -116,7 +116,7 @@ int	ft_lst_color_ss(t_arg *arg)
 		else
 			ft_ps(ft_itoa(arg->a->data));
 		ft_ps("\t");
-		if ((i == 1 || i == 2) && arc->c == 1)
+		if ((i == 1 || i == 2) && arg->c == 1)
 			ft_psc(ft_itoa(arg->b->data), GRN);
 		else
 			ft_ps(ft_itoa(arg->b->data));

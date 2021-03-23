@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:35:30 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/22 18:48:14 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/23 21:08:59 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int	ft_max_min_in(t_list *a, char *str)
 	return (TRUE);
 }
 
-static t_arg	ft_init_arg(t_arg **arg)
+void	ft_init_arg(t_arg *arg)
 {
 	arg->v = FALSE;
 	arg->c = FALSE;
@@ -59,17 +59,17 @@ static t_arg	ft_init_arg(t_arg **arg)
 	arg->b = NULL;
 }
 
-t_arg	ft_arg(t_arg **arg, int ac, char **av)
+int	ft_arg(t_arg *arg, int ac, char **av)
 {
 	int		i;
 	int		c;
 
-	arg = ft_init_arg(&arg);
+	ft_init_arg(arg);
 	if (ac == 1)
 	{
 		ft_error("Error: no parameters\n");
 		arg->err = TRUE;
-		return (arg);
+		return (TRUE);
 	}
 	i = 1;
 	c = 0;
