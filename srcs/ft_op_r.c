@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 16:34:53 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/23 20:22:34 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/23 22:26:54 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int	ft_r(t_list **lst)
 {
 	t_list	*tmp;
 
-	if (!lst || !lst->next)
-		return (0);
 	tmp = *lst;
+	if (!tmp || !tmp->next)
+		return (0);
 	ft_lstadd_back(&lst, ft_lstnew(lst->data));
 	lst = lst->next;
 	ft_lstdelone(tmp);
@@ -32,7 +32,7 @@ int	ft_rr(t_list **lst)
 
 	if (!lst || !lst->next)
 		return (0);
-	tmp = *lst;
+	tmp = lst;
 	while (tmp->next != NULL)
 		tmp = tmp->next;
 	data = tmp->data;

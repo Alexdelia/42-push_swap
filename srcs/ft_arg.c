@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:35:30 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/23 21:08:59 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/23 21:19:48 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,17 +79,17 @@ int	ft_arg(t_arg *arg, int ac, char **av)
 			arg->v = TRUE;
 		else if (ft_strcmp(av[i], "-c") == 0)
 			arg->c = TRUE;
-		else if (ft_is_int(av[i]) == TRUE && ft_max_min_in(a, av[i]) == TRUE)
+		else if (ft_is_int(av[i]) == TRUE && ft_max_min_in(arg->a, av[i]) == TRUE)
 		{
-			if (c == 0);
+			if (c == 0)
 				arg->a = ft_lstnew(ft_atoi(av[i]));
 			else
-				ft_lstadd_back(arg->&a, ft_atoi(av[i]));
+				ft_lstadd_back(&arg->a, ft_lstnew(ft_atoi(av[i])));
 			c++;
 		}
 		else
 		{
-			ft_lstclear(arg->&a);
+			ft_lstclear(&arg->a);
 			arg->err = TRUE;
 		}
 		i++;

@@ -6,13 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/23 19:29:46 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/23 20:15:26 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/23 21:25:56 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int	ft_lst_color(t_arg *arg, int ga, int gb)
+int	ft_lst_color(t_arg arg, int ga, int gb)
 {
 	int	i;
 
@@ -41,7 +41,7 @@ int	ft_lst_color(t_arg *arg, int ga, int gb)
 	return (0);
 }
 
-int	ft_lst_color_sa(t_arg *arg)
+int	ft_lst_color_sa(t_arg arg)
 {
 	int	i;
 
@@ -70,7 +70,7 @@ int	ft_lst_color_sa(t_arg *arg)
 	return (0);
 }
 
-int	ft_lst_color_sb(t_arg *arg)
+int	ft_lst_color_sb(t_arg arg)
 {
 	int	i;
 
@@ -99,7 +99,7 @@ int	ft_lst_color_sb(t_arg *arg)
 	return (0);
 }
 
-int	ft_lst_color_ss(t_arg *arg)
+int	ft_lst_color_ss(t_arg arg)
 {
 	int	i;
 
