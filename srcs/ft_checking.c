@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 14:35:14 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/24 03:47:05 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/24 03:53:47 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,6 @@ int	ft_checking(t_arg *arg)
 		}
 		free(line);
 	}
-	// write OK, KO here
+	// write OK, KO here or in main
 	return (TRUE);
 }

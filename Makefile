@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/03/23 20:09:22 by adelille         ###   ########.fr        #
+#    Updated: 2021/03/24 04:18:07 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,8 @@ SRCSNAME_CH = checker.c \
 				ft_op_s.c \
 				ft_op_p.c \
 				ft_op_r.c \
-				ft_lst_color.c
+				ft_lst_color.c \
+				ft_put_row.c
 
 SRCS_CH = $(addprefix $(SRCSPATH), $(SRCSNAME_CH))
 OBJSNAME_CH = $(SRCSNAME_CH:.c=.o)
