@@ -6,26 +6,32 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 15:27:35 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/23 22:05:59 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/24 03:21:50 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int	ft_s(t_list **lst)
+int	ft_op_sa(t_arg *arg)
 {
-	t_list	*next;
-	t_list	*tmp;
-	int		data;
+	int	tmp;
 
-	next = *lst;
-	next = next->next;
-	tmp = *lst;
-	if (!lst || !next)
+	if (!arg->a || !arg->a->next)
 		return (0);
-	data = tmp->data;
-	tmp->data = next->data;
-	next->data = tmp->data;
-	*lst = tmp;
+	tmp = arg->a->data;
+	arg->a->data = arg->a->next->data;
+	arg->a->next->data = tmp;
+	return (0);
+}
+
+int	ft_op_sb(t_arg *arg)
+{
+	int	tmp;
+
+	if (!arg->b || !arg->b->next)
+		return (0);
+	tmp = arg->b->data;
+	arg->b->data = arg->b->next->data;
+	arg->b->next->data = tmp;
 	return (0);
 }
