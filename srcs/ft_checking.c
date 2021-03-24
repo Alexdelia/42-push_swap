@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 14:35:14 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/24 03:53:47 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/24 04:50:28 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,13 @@ int	ft_checking(t_arg *arg)
 		if (ft_doop(arg, line) >= 1)
 		{
 			free(line);
-			// if don't write error in doop fonction, do it here
 			return (FALSE);
 		}
 		free(line);
 	}
-	// write OK, KO here or in main
+	if (arg->b || ft_check_sort(arg->a) == FALSE)
+		ft_psc("KO\n", RED);
+	else
+		ft_psc("OK\n", GRN);
 	return (TRUE);
 }

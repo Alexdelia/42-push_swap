@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/24 04:19:08 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/24 04:47:26 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct s_arg
 int		ft_arg(t_arg *arg, int ac, char **av);
 
 int		ft_checking(t_arg *arg);
+
+int		ft_check_sort(t_list *lst);
 
 int		ft_op_sa(t_arg *arg);
 int		ft_op_sb(t_arg *arg);

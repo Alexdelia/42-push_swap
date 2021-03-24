@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/03/24 04:18:07 by adelille         ###   ########.fr        #
+#    Updated: 2021/03/24 04:47:42 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,7 @@ SRCSNAME_CH = checker.c \
 				ft_arg.c \
 				ft_utils.c \
 				ft_checking.c \
+				ft_check_sort.c \
 				ft_op_s.c \
 				ft_op_p.c \
 				ft_op_r.c \
