@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/25 20:19:21 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/26 00:07:57 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ typedef struct s_arg
 {
 	int		v;
 	int		c;
-	int		aas;
-	int		bls;
 	int		err;
 	t_list	*a;
 	t_list	*b;
@@ -33,6 +31,8 @@ int		ft_isnt_in(t_list *lst, int nb);
 int		ft_max_min_in(t_list *a, char *str);
 
 int		ft_checking(t_arg *arg);
+
+int		ft_bl_sort(t_arg arg);
 
 int		ft_check_sort(t_list *lst);
 

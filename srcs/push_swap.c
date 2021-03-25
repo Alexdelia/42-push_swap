@@ -6,13 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 19:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/25 20:26:06 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/26 00:12:51 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int	ft_visual(char **av);
+int	ft_visual(char **av)
 {
 	int	i;
 
@@ -42,7 +42,7 @@ int	main(int ac, char **av)
 		ft_psc("Done\n", GRN);
 		ft_psc("Sorting ...\n", "\033[1;29m");
 	}
-	ft_find_sort(&arg);
-	ft_lstclear(&arg->a);
-	ft_lstclear(&arg->b);
+	ft_bl_sort(arg);
+	ft_lstclear(&arg.a);
+	ft_lstclear(&arg.b);
 }

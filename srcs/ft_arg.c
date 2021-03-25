@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:35:30 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/25 20:19:06 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/26 00:18:59 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_init_arg(t_arg *arg)
 {
 	arg->v = FALSE;
 	arg->c = FALSE;
-	arg->aas = FALSE;
-	arg->bls = FALSE;
 	arg->err = FALSE;
 	arg->a = NULL;
 	arg->b = NULL;
@@ -29,21 +27,11 @@ void	ft_hyphen(t_arg *arg, char *str)
 		arg->v = TRUE;
 	else if (ft_strcmp(str, "-c") == 0)
 		arg->c = TRUE;
-	else if (ft_strcmp(str, "-alex_advance_sort") == 0)
-	{
-		arg->aas = TRUE;
-		arg->bls = FALSE;
-	}
-	else if (ft_strcmp(str, "-bubble_sort") == 0)
-	{
-		arg->ins = TRUE;
-		arg->bls = FALSE;
-	}
 }
 
 int	ft_loop(t_arg *arg, char *str, int c)
 {
-	if (str[i] == '-')
+	if (str[0] == '-')
 		ft_hyphen(arg, str);
 	else if (ft_is_int(str) == TRUE && ft_max_min_in(arg->a, str) == TRUE)
 	{

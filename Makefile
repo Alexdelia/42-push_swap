@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/03/25 20:08:06 by adelille         ###   ########.fr        #
+#    Updated: 2021/03/26 00:17:17 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,11 +66,12 @@ OBJSNAME_CH = $(SRCSNAME_CH:.c=.o)
 #OBJS = $(addprefix $(OBJSPATH), $(OBJSNAME))
 OBJS_CH = $(OBJSPATH_CH)*.o
 
-SRCS_PS =	push_swap.c \
+SRCSNAME_PS = push_swap.c \
 				ft_arg.c \
 				ft_arg_utils.c \
 				ft_utils.c \
-				ft_find_sort.c \
+				ft_bl_sort.c \
+				ft_check_sort.c \
 				ft_operation/ft_op_s.c \
 				ft_operation/ft_op_p.c \
 				ft_operation/ft_op_r.c
@@ -82,16 +83,14 @@ OBJS_PS = $(OBJSPATH_PS)*.o
 
 # *************************************************************************** #
 
-all: $(NAME)
-
-$(NAME): checker push_swap
+all: checker push_swap
 
 checker: $(LBM)
 	@mkdir $(OBJSPATH_CH) 2> /dev/null || true
 	@$(CC) -I$(INC) $(LBINC) -c $(SRCS_CH)
 	@mv *.o $(OBJSPATH_CH)
 	$(CC) $(OBJS_CH) $(LBNAME) -L$(LBPATH) $(LBINC) -I$(INC) -o $(CH)
-	@echo "$(B)$(MAG)$(BEL)\n\t$(CH)\tcompiled!\n$(D)"
+	@echo "$(B)$(MAG)$(BEL)\n\t $(CH)\tcompiled!\n$(D)"
 
 push_swap: $(LBM)
 	@mkdir $(OBJSPATH_PS) 2> /dev/null || true
