@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/03/24 04:47:42 by adelille         ###   ########.fr        #
+#    Updated: 2021/03/25 19:01:53 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,9 +54,9 @@ SRCSNAME_CH = checker.c \
 				ft_utils.c \
 				ft_checking.c \
 				ft_check_sort.c \
-				ft_op_s.c \
-				ft_op_p.c \
-				ft_op_r.c \
+				ft_operation/ft_op_s.c \
+				ft_operation/ft_op_p.c \
+				ft_operation/ft_op_r.c \
 				ft_lst_color.c \
 				ft_put_row.c
 
