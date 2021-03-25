@@ -6,57 +6,59 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:35:30 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/23 21:19:48 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/25 20:19:06 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-static int	ft_is_int(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[0] == '-')
-		i++;
-	while (str[i])
-	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			return (ft_error("Error: one of the parameters is not an int.\n"));
-		i++;
-	}
-	return (TRUE);
-}
-
-static int	ft_isnt_in(t_list *lst, int nb)
-{
-	while (lst)
-	{
-		if (nb == lst->data)
-			return (ft_error("Error: one int is present multiple times\n"));
-		lst = lst->next;
-	}
-	return (TRUE);
-}
-
-static int	ft_max_min_in(t_list *a, char *str)
-{
-	if (atol(str) > INT_MAX)
-		return (ft_error("Error: one int is over INT_MAX\n"));
-	if (atol(str) < INT_MIN)
-		return (ft_error("Error: one int is under INT_MIN\n"));
-	if (ft_isnt_in(a, ft_atoi(str)) == FALSE)
-		return (FALSE);
-	return (TRUE);
-}
-
 void	ft_init_arg(t_arg *arg)
 {
 	arg->v = FALSE;
 	arg->c = FALSE;
+	arg->aas = FALSE;
+	arg->bls = FALSE;
 	arg->err = FALSE;
 	arg->a = NULL;
 	arg->b = NULL;
+}
+
+void	ft_hyphen(t_arg *arg, char *str)
+{
+	if (ft_strcmp(str, "-v") == 0)
+		arg->v = TRUE;
+	else if (ft_strcmp(str, "-c") == 0)
+		arg->c = TRUE;
+	else if (ft_strcmp(str, "-alex_advance_sort") == 0)
+	{
+		arg->aas = TRUE;
+		arg->bls = FALSE;
+	}
+	else if (ft_strcmp(str, "-bubble_sort") == 0)
+	{
+		arg->ins = TRUE;
+		arg->bls = FALSE;
+	}
+}
+
+int	ft_loop(t_arg *arg, char *str, int c)
+{
+	if (str[i] == '-')
+		ft_hyphen(arg, str);
+	else if (ft_is_int(str) == TRUE && ft_max_min_in(arg->a, str) == TRUE)
+	{
+		if (c == 0)
+			arg->a = ft_lstnew(ft_atoi(str));
+		else
+			ft_lstadd_back(&arg->a, ft_lstnew(ft_atoi(str)));
+		c++;
+	}
+	else
+	{
+		ft_lstclear(&arg->a);
+		arg->err = TRUE;
+	}
+	return (c);
 }
 
 int	ft_arg(t_arg *arg, int ac, char **av)
@@ -73,25 +75,9 @@ int	ft_arg(t_arg *arg, int ac, char **av)
 	}
 	i = 1;
 	c = 0;
-	while (av[i])
+	while (av[i] && arg->err == FALSE)
 	{
-		if (ft_strcmp(av[i], "-v") == 0)
-			arg->v = TRUE;
-		else if (ft_strcmp(av[i], "-c") == 0)
-			arg->c = TRUE;
-		else if (ft_is_int(av[i]) == TRUE && ft_max_min_in(arg->a, av[i]) == TRUE)
-		{
-			if (c == 0)
-				arg->a = ft_lstnew(ft_atoi(av[i]));
-			else
-				ft_lstadd_back(&arg->a, ft_lstnew(ft_atoi(av[i])));
-			c++;
-		}
-		else
-		{
-			ft_lstclear(&arg->a);
-			arg->err = TRUE;
-		}
+		c = ft_loop(arg, av[i], c);
 		i++;
 	}
 	return (TRUE);

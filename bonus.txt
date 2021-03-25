@@ -1,0 +1,5 @@
+Bonus done:
+
+1. -v : show visual at every new command
+2. -c : show color coresponding to what the command have done
+3. Error : show every source of error and write it in std error
