@@ -33,6 +33,8 @@ while (!sorted || b != NULL)
 	// here SmA bot
 	// and  BiB bot
 
+	// this an old update, I fix and find opti
+
 	rr until next small and big come to top
 	
 	- first put top b on a:
