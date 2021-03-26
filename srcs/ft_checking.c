@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 14:35:14 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/24 04:50:28 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/26 01:04:17 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,24 @@ int	ft_doop(t_arg *arg, char *line)
 	return (err);
 }
 
+void	ft_output(t_arg arg)
+{
+	if (arg.b || ft_check_sort(arg.a) == FALSE)
+	{
+		if (arg.c == TRUE)
+			ft_psc("KO\n", RED);
+		else
+			ft_ps("KO\n");
+	}
+	else
+	{
+		if (arg.c == TRUE)
+			ft_psc("OK\n", GRN);
+		else
+			ft_ps("OK\n");
+	}
+}
+
 int	ft_checking(t_arg *arg)
 {
 	char	*line;
@@ -81,9 +99,6 @@ int	ft_checking(t_arg *arg)
 		}
 		free(line);
 	}
-	if (arg->b || ft_check_sort(arg->a) == FALSE)
-		ft_psc("KO\n", RED);
-	else
-		ft_psc("OK\n", GRN);
+	ft_output(*arg);
 	return (TRUE);
 }
