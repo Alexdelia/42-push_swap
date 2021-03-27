@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 02:02:23 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/27 03:22:42 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/27 04:16:40 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_opti_top(t_list **lst, int data, int v, char *type)
 	int	n_command;
 
 	n_command = 0;
-	if (ft_find_close(*lst, data) == 1)
+	if (ft_find_close(*lst, data) == -1)
 	{
 		while ((*lst)->data != data)
 			n_command += ft_opti_shared_r(lst, v, type);
@@ -55,7 +55,7 @@ int	ft_opti_bot(t_list **lst, int data, int v, char *type)
 	int	n_command;
 
 	n_command = 0;
-	if (ft_find_close(*lst, data) == 1)
+	if (ft_find_close(*lst, data) == -1)
 	{
 		while (ft_lst_last(*lst, data) == FALSE)
 			n_command += ft_opti_shared_r(lst, v, type);
