@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 00:31:33 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/27 01:39:30 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/27 02:00:10 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,9 +175,73 @@ int	ft_r_to_bot(t_arg *arg, int SmA, int BiB, int v)
 	return (n_command);
 }
 
-int	ft_opti_top(t_list **lst, int data, int v)
+int	ft_find_close(t_list *lst, int data)
 {
+	int	i;
+	int	size;
 
+	i = 0;
+	size = ft_lst_size(lst);
+	while (lst && lst->data != data)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return ((i > size / 2 ? 1 : -1));
+}
+
+int	ft_opti_shared_r(t_list **lst, int v, char *type)
+{
+	ft_op_r(lst);
+	if (v == TRUE)
+	{
+		ft_ps("r");
+		ft_ps(type);
+	}
+	return (1);
+}
+
+int	ft_opti_shared_rr(t_list **lst, int v, char *type)
+{
+	ft_op_rr(lst);
+	if (v == TRUE)
+	{
+		ft_ps("rr");
+		ft_ps(type);
+	}
+	return (1);
+}
+
+int	ft_opti_top(t_list **lst, int data, int v, char *type)
+{
+	int	n_command;
+
+	n_command = 0;
+	if (ft_find_close(*lst, data) == 1)
+	{
+		while (*(lst)->data != data)
+			n_command += ft_opti_shared_r(lst, v, type);
+		return (n_command);
+	}
+	while (*(lst)->data != data)
+		n_command += ft_opti_shared_rr(lst, v, type);
+	return (n_command)
+}
+
+int	ft_opti_bot(t_list **lst, int data, int v, char *type)
+{
+	int	n_command;
+
+	n_command = 0;
+	if (ft_find_close(*lst, data) == 1)
+	{
+		while (ft_lst_last(*lst, data) == FALSE)
+			n_command += ft_opti_shared_r(lst, v, type);
+		return (n_command);
+	}
+	while (ft_lst_last(*lst, data) == FALSE)
+		n_command += ft_opti_shared_rr(lst, v, type);
+	return (n_command)
 }
 
 int	ft_need_ss(t_arg *arg, int v)
@@ -210,7 +274,7 @@ int	ft_alex_sort(t_arg arg, int v)
 		if (ft_chek_sort(arg.b) == FALSE && ft_check_unsort(arg.b) == FALSE)
 		{
 			next_big = ft_next_big(arg.b, next_big);
-			n_command += ft_opti_top(&arg.b, next_big, v);
+			n_command += ft_opti_top(&arg.b, next_big, v, "b\n");
 			ft_op_p(&arg.b, &arg.a);
 			if (v == TRUE)
 				ft_ps("pb\n");
