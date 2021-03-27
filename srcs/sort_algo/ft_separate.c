@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 02:04:47 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/27 02:05:08 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/27 02:52:14 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,15 @@ int	ft_is_sep(t_arg arg, int average)
 {
 	while (arg.a)
 	{
-		if (arg.a < average)
+		if (arg.a->data < average)
 			return (FALSE);
 		arg.a = arg.a->next;
 	}
 	while (arg.b)
 	{
-		if (arg.b >= average)
+		if (arg.b->data >= average)
 			return (FALSE);
+		arg.b = arg.b->next;
 	}
 	return (TRUE);
 }
@@ -51,9 +52,9 @@ int	ft_separate(t_arg *arg, int v)
 	int	average;
 
 	i = 0;
-	size = ft_lst_size(arg->a);
+	size = ft_lstsize(arg->a);
 	average = ft_lst_average(arg->a);
-	while (i <= size && ft_sep(*arg, average) == FALSE)
+	while (i <= size && ft_is_sep(*arg, average) == FALSE)
 	{
 		if (arg->a->data > average)
 		{

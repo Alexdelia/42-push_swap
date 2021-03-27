@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/26 00:07:57 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/27 03:04:56 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,29 @@ int		ft_max_min_in(t_list *a, char *str);
 
 int		ft_checking(t_arg *arg);
 
-int		ft_bl_sort(t_arg arg);
+int		ft_find_best_algo(t_arg *arg);
+int		ft_sort_3(t_arg arg);
+int		ft_alex_sort(t_arg arg, int v);
+
+int		ft_separate(t_arg *arg, int v);
+int		ft_is_sep(t_arg arg, int average);
+int		ft_lst_average(t_list *lst);
+
+int		ft_opti_bot(t_list **lst, int data, int v, char *type);
+int		ft_opti_top(t_list **lst, int data, int v, char *type);
+int		ft_opti_shared_r(t_list **lst, int v, char *type);
+int		ft_opti_shared_rr(t_list **lst, int v, char *type);
+
+int		ft_lst_last(t_list *lst, int data);
+int		ft_find_close(t_list *lst, int data);
+
+int		ft_smallest(t_list *lst);
+int		ft_biggest(t_list *lst);
+int		ft_next_small(t_list *lst, int last_small);
+int		ft_next_big(t_list *lst, int last_big);
 
 int		ft_check_sort(t_list *lst);
+int		ft_check_unsort(t_list *lst);
 
 int		ft_op_sa(t_arg *arg);
 int		ft_op_sb(t_arg *arg);
@@ -53,5 +73,6 @@ void	ft_put_row_ss(t_arg arg, int i);
 
 int		ft_error(char *text);
 long	ft_atol(char *str);
+int		ft_visual(char **av);
 
 #endif

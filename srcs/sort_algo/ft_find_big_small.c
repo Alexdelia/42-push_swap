@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 02:03:13 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/27 02:03:49 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/27 03:27:20 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_smallest(t_list *lst)
 	{
 		if (lst->data < smallest)
 			smallest = lst->data;
-		lst = lst->next
+		lst = lst->next;
 	}
 	return (smallest);
 }
@@ -49,7 +49,7 @@ int	ft_next_small(t_list *lst, int last_small)
 	{
 		if (lst->data < small && lst->data > last_small)
 			small = lst->data;
-		lst = lst->next
+		lst = lst->next;
 	}
 	return (small);
 }
@@ -61,9 +61,9 @@ int ft_next_big(t_list *lst, int last_big)
 	big = INT_MIN;
 	while (lst)
 	{
-		if (lst->data < big && lst->data > last_big)
+		if (lst->data > big && lst->data < last_big)
 			big = lst->data;
-		lst = lst->next
+		lst = lst->next;
 	}
 	return (big);
 }

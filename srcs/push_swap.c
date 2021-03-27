@@ -6,25 +6,11 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 19:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/27 02:20:05 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/27 03:04:35 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
-
-int	ft_visual(char **av)
-{
-	int	i;
-
-	i = 0;
-	while (av[i])
-	{
-		if (ft_strcmp(av[i], "-v") == 0)
-			return (TRUE);
-		i++;
-	}
-	return (FALSE);
-}
 
 int	main(int ac, char **av)
 {
@@ -42,7 +28,7 @@ int	main(int ac, char **av)
 		ft_psc("Done\n", GRN);
 		ft_psc("Sorting ...\n", "\033[1;29m");
 	}
-	ft_find_best_sort(&arg);
+	ft_find_best_algo(&arg);
 	ft_lstclear(&arg.a);
 	ft_lstclear(&arg.b);
 }

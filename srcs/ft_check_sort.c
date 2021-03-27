@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 04:43:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/27 01:12:58 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/27 02:41:51 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_check_unsort(t_list *lst)
 	while (lst && lst->next)
 	{
 		if (lst->data < lst->next->data)
-			return (FALSE)
+			return (FALSE);
 		lst = lst->next;
 	}
 	return (TRUE);
