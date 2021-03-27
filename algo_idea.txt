@@ -11,12 +11,12 @@ while (!sorted || b != NULL)
 	
 	need to have:
 	b:
-	\
-	 \
+	 /
+	/
 
 	a:
-	   /
-	  /
+	  \
+	   \
 	
 	BiB = bigger b (b > best_found && b < ub)
 	SmA = smaller a (actual < best_found && a > ua)

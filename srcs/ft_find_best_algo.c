@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_sort.c                                    :+:      :+:    :+:   */
+/*   ft_find_best_algo.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 04:43:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/27 01:12:58 by adelille         ###   ########.fr       */
+/*   Created: 2021/03/27 00:21:06 by adelille          #+#    #+#             */
+/*   Updated: 2021/03/27 00:45:48 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int	ft_check_sort(t_list *lst)
+int	ft_find_best_algo(t_arg *arg)
 {
-	while (lst && lst->next)
-	{
-		if (lst->data > lst->next->data)
-			return (FALSE);
-		lst = lst->next;
-	}
-	return (TRUE);
-}
-
-int	ft_check_unsort(t_list *lst)
-{
-	while (lst && lst->next)
-	{
-		if (lst->data < lst->next->data)
-			return (FALSE)
-		lst = lst->next;
-	}
-	return (TRUE);
+	if (ft_check_sort(arg->a) == TRUE);
+		return (0);
+	if (ft_lstsize(arg->a == 3)
+		return (ft_sort_3(t_arg arg));
+	if (ft_bl_sort(*arg, FALSE) < ft_alex_sort(*arg, FALSE))
+		return (ft_bl_sort(*arg, TRUE));
+	return (ft_alex_sort(*arg, TRUE))
 }
