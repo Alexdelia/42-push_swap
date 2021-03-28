@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:35:30 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/26 00:18:59 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/28 14:32:04 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ void	ft_init_arg(t_arg *arg)
 
 void	ft_hyphen(t_arg *arg, char *str)
 {
-	if (ft_strcmp(str, "-v") == 0)
-		arg->v = TRUE;
-	else if (ft_strcmp(str, "-c") == 0)
-		arg->c = TRUE;
+	arg->v = !ft_strcmp(str, "-v");
+	arg->c = !ft_strcmp(str, "-c");
 }
 
 int	ft_loop(t_arg *arg, char *str, int c)
@@ -57,8 +55,7 @@ int	ft_arg(t_arg *arg, int ac, char **av)
 	ft_init_arg(arg);
 	if (ac == 1)
 	{
-		ft_error("Error: no parameters\n");
-		arg->err = TRUE;
+		arg->err = !ft_error("Error: no parameters\n");
 		return (TRUE);
 	}
 	i = 1;
