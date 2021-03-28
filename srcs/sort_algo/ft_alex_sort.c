@@ -6,11 +6,30 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 00:31:33 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/27 04:14:08 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/28 06:54:15 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
+
+/*void	ft_pl(t_arg arg)
+{
+	ft_ps("\na:\t");
+	while (arg.a)
+	{
+		ft_ps(ft_itoa(arg.a->data));
+		ft_ps(" ");
+		arg.a = arg.a->next;
+	}
+	ft_ps("\nb:\t");
+	while (arg.b)
+	{
+		ft_ps(ft_itoa(arg.b->data));
+		ft_ps(" ");
+		arg.b = arg.b->next;
+	}
+	ft_ps("\n");
+}*/
 
 int	ft_need_ss(t_arg *arg, int v)
 {
@@ -26,22 +45,22 @@ int	ft_need_ss(t_arg *arg, int v)
 	return (0);
 }
 
-int	ft_r_to_bot(t_arg *arg, int SmA, int BiB, int v)
+int	ft_r_to_top(t_arg *arg, int SmA, int BiB, int v)
 {
 	int	n_command;
 
 	n_command = 0;
-	while (ft_lst_last(arg->a, SmA) == FALSE || ft_lst_last(arg->b, BiB) == FALSE)
+	while (arg->a->data != SmA || arg->b->data != BiB)
 	{
 		n_command += ft_need_ss(arg, v);
-		if (ft_lst_last(arg->a, SmA) == TRUE)
+		if (arg->a->data == SmA)
 		{
 			ft_op_r(&arg->b);
 			if (v == TRUE)
 				ft_ps("rb\n");
 			n_command++;
 		}
-		else if (ft_lst_last(arg->b, BiB) == TRUE)
+		else if (arg->b->data == BiB)
 		{
 			ft_op_r(&arg->a);
 			if (v == TRUE)
@@ -71,7 +90,7 @@ int	ft_alex_sort(t_arg arg, int v)
 	n_command = ft_separate(&arg, v);
 	next_big = ft_biggest(arg.b);
 	next_small = ft_smallest(arg.a);
-	n_command += ft_r_to_bot(&arg, next_small, next_big, v);
+	n_command += ft_r_to_top(&arg, next_small, next_big, v);
 	while (ft_check_sort(arg.a) == FALSE && ft_check_unsort(arg.b) == FALSE)
 	{
 		n_command += ft_need_ss(&arg, v);
@@ -80,12 +99,12 @@ int	ft_alex_sort(t_arg arg, int v)
 			n_command += ft_opti_top(&arg.b, next_big, v, "b\n");
 			old_big = next_big;
 			next_big = ft_next_big(arg.b, next_big);
-			ft_op_p(&arg.b, &arg.a);
+			ft_op_p(&arg.a, &arg.b);
 			if (v == TRUE)
 				ft_ps("pa\n");
 			n_command++;
 			n_command += ft_opti_bot(&arg.b, next_big, v, "b\n");
-			ft_op_p(&arg.a, &arg.b);
+			ft_op_p(&arg.b, &arg.a);
 			if (v == TRUE)
 				ft_ps("pb\n");
 			n_command += ft_opti_top(&arg.a, next_small, v, "a\n");
