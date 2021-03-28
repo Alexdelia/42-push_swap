@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 00:31:33 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/28 06:54:15 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/28 07:27:57 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,15 +86,29 @@ int	ft_alex_sort(t_arg arg, int v)
 	int	old_big;
 	int	next_small;
 	int old_small;
+	int	do_ra;
+	int	do_rb;
 
 	n_command = ft_separate(&arg, v);
 	next_big = ft_biggest(arg.b);
 	next_small = ft_smallest(arg.a);
 	n_command += ft_r_to_top(&arg, next_small, next_big, v);
-	while (ft_check_sort(arg.a) == FALSE && ft_check_unsort(arg.b) == FALSE)
+	do_ra = FALSE;
+	do_rb = FALSE;
+	while (ft_check_sort(arg.a) == FALSE || ft_check_unsort(arg.b) == FALSE)
 	{
 		n_command += ft_need_ss(&arg, v);
-		if (ft_check_sort(arg.b) == FALSE && ft_check_unsort(arg.b) == FALSE)
+		if (ft_check_sort(arg.a) == TRUE && ft_check_unsort(arg.b) == FALSE)
+		{
+			next_big = ft_biggest(arg.b);
+			n_command += ft_opti_top(&arg.b, next_big, v, "b\n");
+			next_big = ft_next_big(arg.b, next_big);
+			ft_op_p(&arg.a, &arg.b);
+			if (v == TRUE)
+				ft_ps("pa\n");
+			n_command++;
+		}
+		if (ft_check_unsort(arg.b) == FALSE)
 		{
 			n_command += ft_opti_top(&arg.b, next_big, v, "b\n");
 			old_big = next_big;
@@ -107,6 +121,10 @@ int	ft_alex_sort(t_arg arg, int v)
 			ft_op_p(&arg.b, &arg.a);
 			if (v == TRUE)
 				ft_ps("pb\n");
+			do_rb = TRUE;
+		}
+		if (ft_check_sort(arg.a) == FALSE)
+		{
 			n_command += ft_opti_top(&arg.a, next_small, v, "a\n");
 			old_small = next_small;
 			next_small = ft_next_small(arg.a, next_small);
@@ -118,10 +136,33 @@ int	ft_alex_sort(t_arg arg, int v)
 			ft_op_p(&arg.b, &arg.a);
 			if (v == TRUE)
 				ft_ps("pa\n");
-			ft_op_rr(&arg.a);
-			ft_op_rr(&arg.b);
+			do_ra = TRUE;
+		}
+		if (do_rb == TRUE && do_ra == TRUE)
+		{
+			ft_op_r(&arg.a);
+			ft_op_r(&arg.b);
 			if (v == TRUE)
-				ft_ps("rrr\n");
+				ft_ps("rr\n");
+			do_ra = FALSE;
+			do_rb = FALSE;
+			n_command++;
+		}
+		else if (do_rb == TRUE)
+		{
+			ft_op_r(&arg.b);
+			if (v == TRUE)
+				ft_ps("rb\n");
+			do_rb = FALSE;
+			n_command++;
+		}
+		else if (do_ra == TRUE)
+		{
+			ft_op_r(&arg.a);
+			if (v == TRUE)
+				ft_ps("ra\n");
+			do_ra = FALSE;
+			n_command++;
 		}
 	}
 	while (arg.b)
