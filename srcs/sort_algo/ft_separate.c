@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 02:04:47 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/28 16:04:09 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/28 17:19:34 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,19 @@ int	ft_brute_force_median(t_list *lst)
 	return (0);
 }
 
+int	ft_security(t_arg *arg)
+{
+	int	n_command;
+
+	n_command = ft_opti_top(&arg->a, ft_smallest(arg->a), TRUE, "a\b");
+	ft_op_p(&arg->b, &arg->a);
+	ft_ps("pbAYAYA\n");
+	return (n_command + 1);
+}
+
 int	ft_advance_separate_loop(t_arg *arg, int average)
 {
+	ft_ps(ft_itoa(average));
 	if (arg->a->data < average)
 	{
 		ft_op_p(&arg->b, &arg->a);
@@ -66,6 +77,8 @@ int	ft_advance_separate_loop(t_arg *arg, int average)
 		ft_ps("rra\npb\n");
 		return (2);
 	}
+	if (ft_lstsize(arg->a) == 3)
+		return (ft_security(arg));
 	ft_op_r(&arg->a);
 	ft_ps("ra\n");
 	return (1);
@@ -83,7 +96,8 @@ int	ft_advance_separate(t_arg *arg)
 	size = ft_lstsize(arg->a);
 	median = ft_brute_force_median(arg->a);
 	while (ft_lstsize(arg->a) > 2 
-			&& (ft_lstsize(arg->b) - old_size_b) < (size - 1) / 2)
+			/*&& (ft_lstsize(arg->b) - old_size_b) < (size + 1) / 2*/
+			&& ft_lst_under_exist(arg->a, median) == TRUE)
 		n_command += ft_advance_separate_loop(arg, median);
 	if (old_size_b == 0)
 		arg->chunk = ft_lstnew(ft_lstsize(arg->b));

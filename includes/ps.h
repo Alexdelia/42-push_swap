@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/28 14:49:16 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/28 16:58:58 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int		ft_opti_shared_rr(t_list **lst, int v, char *type);
 
 int		ft_lst_last(t_list *lst);
 int		ft_find_close(t_list *lst, int data);
+int		ft_lst_under_exist(t_list *lst, int data);
 
 int		ft_smallest(t_list *lst);
 int		ft_biggest(t_list *lst);
