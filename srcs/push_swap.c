@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 19:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/27 03:04:35 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/28 14:41:32 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int ac, char **av)
 {
 	t_arg	arg;
-	int	v;
+	int		v;
 
 	v = ft_visual(av);
 	if (v == TRUE)

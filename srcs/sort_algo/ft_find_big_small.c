@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 02:03:13 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/27 03:27:20 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/28 14:48:22 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_smallest(t_list *lst)
 {
-	int smallest;
+	int	smallest;
 
 	smallest = INT_MAX;
 	while (lst)
@@ -42,7 +42,7 @@ int	ft_biggest(t_list *lst)
 
 int	ft_next_small(t_list *lst, int last_small)
 {
-	int small;
+	int	small;
 
 	small = INT_MAX;
 	while (lst)
@@ -54,9 +54,9 @@ int	ft_next_small(t_list *lst, int last_small)
 	return (small);
 }
 
-int ft_next_big(t_list *lst, int last_big)
+int	ft_next_big(t_list *lst, int last_big)
 {
-	int big;
+	int	big;
 
 	big = INT_MIN;
 	while (lst)

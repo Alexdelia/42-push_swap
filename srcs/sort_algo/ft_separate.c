@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 02:04:47 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/28 10:09:37 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/28 16:04:09 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,49 +28,47 @@ int	ft_lst_average(t_list *lst)
 	return (sum / i);
 }
 
-int	ft_is_sep(t_arg arg, int average)
+int	ft_brute_force_median(t_list *lst)
 {
-	while (arg.a)
+	t_list	*head;
+	t_list	*i;
+	int		med;
+
+	i = lst;
+	while (i)
 	{
-		if (arg.a->data < average)
-			return (FALSE);
-		arg.a = arg.a->next;
+		med = 0;
+		head = lst;
+		while (head)
+		{
+			med += (i->data > head->data ? 1 : -1);
+			head = head->next;
+		}
+		if (med == 0 || med == 1 || med == -1)
+			return (i->data);
+		i = i->next;
 	}
-	while (arg.b)
-	{
-		if (arg.b->data >= average)
-			return (FALSE);
-		arg.b = arg.b->next;
-	}
-	return (TRUE);
+	return (0);
 }
 
-int	ft_separate(t_arg *arg, int v)
+int	ft_advance_separate_loop(t_arg *arg, int average)
 {
-	int	i;
-	int	size;
-	int	average;
-
-	i = 0;
-	size = ft_lstsize(arg->a);
-	average = ft_lst_average(arg->a);
-	while (i <= size && ft_is_sep(*arg, average) == FALSE)
+	if (arg->a->data < average)
 	{
-		if (arg->a->data > average)
-		{
-			ft_op_r(&arg->a);
-			if (v == TRUE)
-				ft_ps("ra\n");
-		}
-		else
-		{
-			ft_op_p(&arg->b, &arg->a);
-			if (v == TRUE)
-				ft_ps("pb\n");
-		}
-		i++;
+		ft_op_p(&arg->b, &arg->a);
+		ft_ps("pb\n");
+		return (1);
 	}
-	return (i);
+	else if (ft_lst_last(arg->a) < average)
+	{
+		ft_op_rr(&arg->a);
+		ft_op_p(&arg->b, &arg->a);
+		ft_ps("rra\npb\n");
+		return (2);
+	}
+	ft_op_r(&arg->a);
+	ft_ps("ra\n");
+	return (1);
 }
 
 int	ft_advance_separate(t_arg *arg)
@@ -78,31 +76,15 @@ int	ft_advance_separate(t_arg *arg)
 	int	n_command;
 	int	old_size_b;
 	int	size;
-	int	average;
+	int	median;
 
 	n_command = 0;
 	old_size_b = ft_lstsize(arg->b);
 	size = ft_lstsize(arg->a);
-	average = ft_lst_average(arg->a);
-	while (ft_lstsize(arg->a) > 2 && (ft_lstsize(arg->b) - old_size_b) < (size - 1) / 2)
-	{
-		if (arg->a->data < average)
-		{
-			ft_op_p(&arg->b, &arg->a);
-			ft_ps("pb\n");
-		}
-		else if (ft_lst_last(arg->a) < average)
-		{
-			ft_op_rr(&arg->a);
-			ft_op_p(&arg->b, &arg->a);
-			ft_ps("rra\npb\n");
-		}
-		else
-		{
-			ft_op_r(&arg->a);
-			ft_ps("ra\n");
-		}
-	}
+	median = ft_brute_force_median(arg->a);
+	while (ft_lstsize(arg->a) > 2 
+			&& (ft_lstsize(arg->b) - old_size_b) < (size - 1) / 2)
+		n_command += ft_advance_separate_loop(arg, median);
 	if (old_size_b == 0)
 		arg->chunk = ft_lstnew(ft_lstsize(arg->b));
 	else

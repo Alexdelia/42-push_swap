@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/28 09:06:03 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/28 14:49:16 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ int		ft_sort_3(t_arg arg);
 int		ft_mid_sort(t_arg arg);
 
 int		ft_advance_separate(t_arg *arg);
-int		ft_separate(t_arg *arg, int v);
-int		ft_is_sep(t_arg arg, int average);
 int		ft_lst_average(t_list *lst);
 
 int		ft_opti_bot(t_list **lst, int data, int v, char *type);
