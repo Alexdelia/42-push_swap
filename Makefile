@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/03/27 02:43:33 by adelille         ###   ########.fr        #
+#    Updated: 2021/03/28 08:58:41 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ SRCSNAME_PS = push_swap.c \
 				ft_arg_utils.c \
 				ft_utils.c \
 				ft_find_best_algo.c \
-				sort_algo/ft_alex_sort.c \
+				sort_algo/ft_mid_sort.c \
 				sort_algo/ft_sort_3.c \
 				sort_algo/ft_separate.c \
 				sort_algo/ft_opti_top_bot.c \

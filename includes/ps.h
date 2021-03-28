@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/27 03:04:56 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/28 09:06:03 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_arg
 	int		err;
 	t_list	*a;
 	t_list	*b;
+	t_list	*chunk;
 }				t_arg;
 
 int		ft_arg(t_arg *arg, int ac, char **av);
@@ -34,8 +35,9 @@ int		ft_checking(t_arg *arg);
 
 int		ft_find_best_algo(t_arg *arg);
 int		ft_sort_3(t_arg arg);
-int		ft_alex_sort(t_arg arg, int v);
+int		ft_mid_sort(t_arg arg);
 
+int		ft_advance_separate(t_arg *arg);
 int		ft_separate(t_arg *arg, int v);
 int		ft_is_sep(t_arg arg, int average);
 int		ft_lst_average(t_list *lst);
@@ -45,7 +47,7 @@ int		ft_opti_top(t_list **lst, int data, int v, char *type);
 int		ft_opti_shared_r(t_list **lst, int v, char *type);
 int		ft_opti_shared_rr(t_list **lst, int v, char *type);
 
-int		ft_lst_last(t_list *lst, int data);
+int		ft_lst_last(t_list *lst);
 int		ft_find_close(t_list *lst, int data);
 
 int		ft_smallest(t_list *lst);
