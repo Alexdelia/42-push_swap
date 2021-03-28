@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 07:48:45 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/28 09:05:20 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/28 10:13:29 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_clean_a_at_start(t_arg *arg, int v)
 
 int	ft_lst_data_of_x(t_list *lst, int x)
 {
-	while (x > 0)
+	while (x > 0 && lst->next)
 	{
 		lst = lst->next;
 		x--;
@@ -65,9 +65,9 @@ int	ft_mid_chunk(t_arg *arg, int data)
 
 	n_command = 0;
 	n_r = 0;
-	next_big = ft_biggest(arg->b);
 	while (data > 2)
 	{
+		next_big = ft_biggest(arg->b);
 		while (arg->b->data != next_big)
 		{
 			ft_op_r(&arg->b);
@@ -75,8 +75,8 @@ int	ft_mid_chunk(t_arg *arg, int data)
 			n_command++;
 			n_r++;
 		}
-		next_big = ft_next_big(arg->b, next_big);
 		ft_op_p(&arg->a, &arg->b);
+		ft_ps("pa\n");
 		data--;
 		while (n_r > 0)
 		{
@@ -95,11 +95,10 @@ int	ft_last_chunk(t_arg *arg, int data)
 	int	next_big;
 
 	n_command = 0;
-	next_big = ft_biggest(arg->b);
 	while (data > 2)
 	{
+		next_big = ft_biggest(arg->b);
 		n_command += ft_opti_top(&arg->b, next_big, TRUE, "b\n");
-		next_big = ft_next_big(arg->b, next_big);
 		ft_op_p(&arg->a, &arg->b);
 		ft_ps("pa\n");
 		n_command++;
@@ -111,27 +110,26 @@ int	ft_last_chunk(t_arg *arg, int data)
 int	ft_put_b_back(t_arg *arg, int i)
 {
 	int	n_command;
-	int	base_i;
 
-	base_i = i;
+	i--;
 	n_command = 0;
-	while (i > 0)
+	while (i >= 0 && arg->b)
 	{
 		if (ft_check_unsort(arg->b) == TRUE)
 		{
 			n_command += ft_last_chunk(arg, ft_lstsize(arg->b));
 			i = 0;
 		}
-		else if (ft_lst_data_of_x(arg->chunk, (base_i - i) + 1) == 1
-					|| ft_lst_data_of_x(arg->chunk, (base_i - i) + 1 == 2))
+		else if (ft_lst_data_of_x(arg->chunk, i) == 1
+					|| ft_lst_data_of_x(arg->chunk, i) == 2)
 			n_command += ft_first_chunk(arg,
-				ft_lst_data_of_x(arg->chunk, (base_i - i) + 1));
-		else if (i == 1)
+				ft_lst_data_of_x(arg->chunk, i));
+		else if (i == 0)
 			n_command += ft_last_chunk(arg,
-				ft_lst_data_of_x(arg->chunk, (base_i - i) + 1));
+				ft_lst_data_of_x(arg->chunk, i));
 		else
 			n_command += ft_mid_chunk(arg,
-				ft_lst_data_of_x(arg->chunk, (base_i - i) + 1));
+				ft_lst_data_of_x(arg->chunk, i));
 		i--;
 	}
 	ft_lstclear(&arg->chunk);

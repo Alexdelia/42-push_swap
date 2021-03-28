@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 02:04:47 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/28 09:12:00 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/28 10:09:37 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	ft_advance_separate(t_arg *arg)
 	old_size_b = ft_lstsize(arg->b);
 	size = ft_lstsize(arg->a);
 	average = ft_lst_average(arg->a);
-	while (ft_lstsize(arg->a) > 2 && (ft_lstsize(arg->b) - old_size_b) < size / 2)
+	while (ft_lstsize(arg->a) > 2 && (ft_lstsize(arg->b) - old_size_b) < (size - 1) / 2)
 	{
 		if (arg->a->data < average)
 		{
@@ -100,9 +100,12 @@ int	ft_advance_separate(t_arg *arg)
 		else
 		{
 			ft_op_r(&arg->a);
-			ft_ps("raOUI\n");
+			ft_ps("ra\n");
 		}
 	}
-	ft_lstadd_back(&arg->chunk, ft_lstnew(ft_lstsize(arg->b) - old_size_b));
+	if (old_size_b == 0)
+		arg->chunk = ft_lstnew(ft_lstsize(arg->b));
+	else
+		ft_lstadd_back(&arg->chunk, ft_lstnew(ft_lstsize(arg->b) - old_size_b));
 	return (n_command);
 }
