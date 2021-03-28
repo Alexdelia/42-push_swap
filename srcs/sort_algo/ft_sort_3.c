@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_sort.c                                    :+:      :+:    :+:   */
+/*   ft_sort_3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 04:43:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/28 10:18:10 by adelille         ###   ########.fr       */
+/*   Created: 2021/03/27 02:20:58 by adelille          #+#    #+#             */
+/*   Updated: 2021/03/28 09:06:50 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int	ft_check_sort(t_list *lst)
+int	ft_sort_3(t_arg arg)
 {
-	while (lst && lst->next)
+	if (arg.a->data == ft_biggest(arg.a))
 	{
-		if (lst->data > lst->next->data)
-			return (FALSE);
-		lst = lst->next;
+		if (ft_lst_last(arg.a) == ft_smallest(arg.a))
+			return (ft_ps("sa\nrra\n"));
+		return (ft_ps("ra\n"));
 	}
-	return (TRUE);
-}
-
-int	ft_check_unsort(t_list *lst)
-{
-	while (lst && lst->next)
+	else if (arg.a->data != ft_smallest(arg.a))
 	{
-		if (lst->data < lst->next->data)
-			return (FALSE);
-		lst = lst->next;
+		if (ft_lst_last(arg.a) == ft_smallest(arg.a))
+			return (ft_ps("rra\n"));
+		return (ft_ps("sa\n"));
 	}
-	return (TRUE);
+	return (ft_ps("rra\nsa\n"));
 }

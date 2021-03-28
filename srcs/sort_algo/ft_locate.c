@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_sort.c                                    :+:      :+:    :+:   */
+/*   ft_locate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 04:43:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/28 10:18:10 by adelille         ###   ########.fr       */
+/*   Created: 2021/03/27 02:05:28 by adelille          #+#    #+#             */
+/*   Updated: 2021/03/28 07:58:12 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int	ft_check_sort(t_list *lst)
+int	ft_lst_last(t_list *lst)
 {
 	while (lst && lst->next)
-	{
-		if (lst->data > lst->next->data)
-			return (FALSE);
 		lst = lst->next;
-	}
-	return (TRUE);
+	return (lst->data);
 }
 
-int	ft_check_unsort(t_list *lst)
+int	ft_find_close(t_list *lst, int data)
 {
-	while (lst && lst->next)
+	int	i;
+	int	size;
+
+	i = 0;
+	size = ft_lstsize(lst);
+	while (lst && lst->data != data)
 	{
-		if (lst->data < lst->next->data)
-			return (FALSE);
+		i++;
 		lst = lst->next;
 	}
-	return (TRUE);
+	return ((i > size / 2 ? 1 : -1));
 }
