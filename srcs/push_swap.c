@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 19:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/28 14:41:32 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/29 15:58:42 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int	main(int ac, char **av)
 	}
 	ft_find_best_algo(&arg);
 	ft_lstclear(&arg.a);
-	ft_lstclear(&arg.b);
+	if (arg.b)
+		ft_lstclear(&arg.b);
 }

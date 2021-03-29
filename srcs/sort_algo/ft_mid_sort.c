@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 07:48:45 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/29 11:54:07 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/29 16:01:15 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,19 +59,19 @@ int	ft_put_b_back(t_arg *arg, int i)
 	return (n_command);
 }
 
-int	ft_mid_sort(t_arg arg)
+int	ft_mid_sort(t_arg *arg)
 {
 	int	n_command;
 	int	i;
 
 	n_command = 0;
 	i = 0;
-	while (ft_lstsize(arg.a) > 2)
+	while (ft_lstsize(arg->a) > 2)
 	{
-		n_command += ft_advance_separate(&arg);
+		n_command += ft_advance_separate(arg);
 		i++;
 	}
-	n_command += ft_clean_a_at_start(&arg, TRUE);
-	n_command += ft_put_b_back(&arg, i);
+	n_command += ft_clean_a_at_start(arg, TRUE);
+	n_command += ft_put_b_back(arg, i);
 	return (n_command);
 }

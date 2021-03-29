@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/29 11:53:24 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/29 15:59:39 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int		ft_max_min_in(t_list *a, char *str);
 int		ft_checking(t_arg *arg);
 
 int		ft_find_best_algo(t_arg *arg);
-int		ft_sort_3(t_arg arg);
-int		ft_mid_sort(t_arg arg);
+int		ft_sort_3(t_arg *arg);
+int		ft_mid_sort(t_arg *arg);
 
 int		ft_advance_separate(t_arg *arg);
 
