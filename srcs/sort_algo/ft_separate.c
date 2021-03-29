@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 02:04:47 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/29 11:20:40 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:55:48 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,8 @@ int	ft_advance_separate(t_arg *arg)
 	old_size_b = ft_lstsize(arg->b);
 	size = ft_lstsize(arg->a);
 	median = ft_brute_force_median(arg->a);
-	while (ft_lstsize(arg->a) > 2 
-			/*&& (ft_lstsize(arg->b) - old_size_b) < (size + 1) / 2*/
-			&& ft_lst_under_exist(arg->a, median) == TRUE)
+	while (ft_lstsize(arg->a) > 2
+		&& ft_lst_under_exist(arg->a, median) == TRUE)
 		n_command += ft_advance_separate_loop(arg, median);
 	if (old_size_b == 0)
 		arg->chunk = ft_lstnew(ft_lstsize(arg->b));

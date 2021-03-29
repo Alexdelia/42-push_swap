@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:35:30 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/29 11:46:12 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:48:08 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_loop(t_arg *arg, char *str, int c)
 	if (str[0] == '-')
 		ft_hyphen(arg, str);
 	if (ft_is_int(str) == TRUE && ft_max_min_in(arg->a, str) == TRUE
-			&& ft_strcmp(str, "-v") != 0 && ft_strcmp(str, "-c") != 0)
+		&& ft_strcmp(str, "-v") != 0 && ft_strcmp(str, "-c") != 0)
 	{
 		if (c == 0)
 			arg->a = ft_lstnew(ft_atoi(str));
