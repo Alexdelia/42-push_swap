@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:35:30 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/29 11:48:08 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/29 12:00:40 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_hyphen(t_arg *arg, char *str)
 		arg->c = TRUE;
 }
 
-int	ft_loop(t_arg *arg, char *str, int c)
+int		ft_loop(t_arg *arg, char *str, int c)
 {
 	if (str[0] == '-')
 		ft_hyphen(arg, str);
@@ -50,7 +50,7 @@ int	ft_loop(t_arg *arg, char *str, int c)
 	return (c);
 }
 
-int	ft_arg(t_arg *arg, int ac, char **av)
+int		ft_arg(t_arg *arg, int ac, char **av)
 {
 	int		i;
 	int		c;

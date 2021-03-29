@@ -6,14 +6,14 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 07:48:45 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/29 11:54:07 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/29 12:01:25 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
 int	ft_clean_a_at_start(t_arg *arg, int v)
-{	
+{
 	if (arg->a->data > arg->a->next->data)
 	{
 		ft_op_sa(arg);
