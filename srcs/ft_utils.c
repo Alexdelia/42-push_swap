@@ -6,13 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 18:48:17 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/28 14:33:13 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/29 12:00:06 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int	ft_error(char *text)
+int		ft_error(char *text)
 {
 	write(2, text, ft_strlen(text));
 	return (FALSE);
@@ -40,7 +40,7 @@ long	ft_atol(char *str)
 	return (res * neg);
 }
 
-int	ft_visual(char **av)
+int		ft_visual(char **av)
 {
 	int	i;
 
