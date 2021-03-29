@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 07:48:45 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/28 16:38:34 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:19:04 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ int	ft_put_b_back(t_arg *arg, int i)
 		if (ft_check_unsort(arg->b) == TRUE)
 		{
 			n_command += ft_last_chunk(arg, ft_lstsize(arg->b));
-			i = 0;
+			i = -1;
 		}
 		else if (ft_lst_data_of_x(arg->chunk, i) == 1
 					|| ft_lst_data_of_x(arg->chunk, i) == 2)

@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 02:04:47 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/28 17:19:34 by adelille         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:20:40 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,12 @@ int	ft_brute_force_median(t_list *lst)
 	{
 		med = 0;
 		head = lst;
-		while (head)
+		while (head != NULL)
 		{
-			med += (i->data > head->data ? 1 : -1);
+			if (i->data > head->data)
+				med = med + 1;
+			if (i->data < head->data)
+				med = med - 1;
 			head = head->next;
 		}
 		if (med == 0 || med == 1 || med == -1)
@@ -55,15 +58,14 @@ int	ft_security(t_arg *arg)
 {
 	int	n_command;
 
-	n_command = ft_opti_top(&arg->a, ft_smallest(arg->a), TRUE, "a\b");
+	n_command = ft_opti_top(&arg->a, ft_smallest(arg->a), TRUE, "a\n");
 	ft_op_p(&arg->b, &arg->a);
-	ft_ps("pbAYAYA\n");
+	ft_ps("pb\n");
 	return (n_command + 1);
 }
 
 int	ft_advance_separate_loop(t_arg *arg, int average)
 {
-	ft_ps(ft_itoa(average));
 	if (arg->a->data < average)
 	{
 		ft_op_p(&arg->b, &arg->a);
