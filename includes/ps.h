@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/29 16:02:08 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/01 14:40:24 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,27 @@
 
 typedef struct	s_arg
 {
-	int		v;
-	int		c;
-	int		err;
-	t_list	*a;
-	t_list	*b;
-	t_list	*chunk;
+	int			v;
+	int			c;
+	int			err;
+	t_list		*a;
+	t_list		*b;
+	t_list		*chunk;
 }				t_arg;
+
+typedef struct				s_markup_list
+{
+	int						nb;
+	int						index;
+	int						keep;
+	struct s_markup_list	*next;
+}							t_mt;
+
+typedef struct	s_markup
+{
+	t_mt		*a;
+	t_mt		*b;
+}				t_markup;
 
 int		ft_arg(t_arg *arg, int ac, char **av);
 int		ft_is_int(char *str);
