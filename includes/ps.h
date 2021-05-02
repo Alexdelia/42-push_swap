@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/01 14:40:24 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/02 14:19:03 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,20 @@ int		ft_checking(t_arg *arg);
 int		ft_find_best_algo(t_arg *arg);
 int		ft_sort_3(t_arg *arg);
 int		ft_mid_sort(t_arg *arg);
+
+void	ft_fill_greater_keep(t_mt **lst);
+
+void	ft_fill_index_keep(t_mt **lst);
+
+void	ft_init_markup(t_markup *ma, t_arg *arg, int type);
+int		ft_fill_index(t_mt **mt, int nb, int index);
+
+t_mt	*ft_mt_new(int nb, int index, int keep);
+void	ft_mt_addback(t_mt **alst, t_mt *new);
+int		ft_mt_size(t_mt *lst);
+t_mt	*ft_mt_last(t_mt *lst);
+int		ft_mt_min(t_mt *mt);
+int		ft_mt_nextmin(t_mt *mt, int over);
 
 int		ft_advance_separate(t_arg *arg);
 

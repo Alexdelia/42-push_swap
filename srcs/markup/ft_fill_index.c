@@ -6,22 +6,22 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 14:59:03 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/01 15:01:44 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/02 14:21:28 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int		ft_fil_index(t_mt **mt, int nb, int index)
+int		ft_fill_index(t_mt **mt, int nb, int index)
 {
 	while (*mt)
 	{
-		if (*mt->nb == nb)
+		if ((*mt)->nb == nb)
 		{
-			*mt->index = index;
+			(*mt)->index = index;
 			return (TRUE);
 		}
-		*mt = mt->next;
+		*mt = (*mt)->next;
 	}
 	return (FALSE);
 }

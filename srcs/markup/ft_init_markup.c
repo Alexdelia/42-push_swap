@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 13:57:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/01 14:42:09 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/02 14:22:29 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	ft_process_markup(t_markup *ma, int type)
 	if (type == 1)
 		ft_fill_greater_keep(&ma->a);
 	else if (type == 2)
-		ft_fill_index_keep(ma);
+		ft_fill_index_keep(&ma->a);
 	ma->a = head;
 }
 
