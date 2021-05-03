@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/02 14:44:54 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/03 22:36:50 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <limits.h>
 # include "libft.h"
+
+# define MT_A	0
+# define MT_B	1
 
 typedef struct	s_arg
 {
