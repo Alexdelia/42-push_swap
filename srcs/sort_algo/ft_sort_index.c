@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mt_free.c                                       :+:      :+:    :+:   */
+/*   ft_sort_index.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/09 13:44:27 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/09 14:09:33 by adelille         ###   ########.fr       */
+/*   Created: 2021/05/09 14:14:56 by adelille          #+#    #+#             */
+/*   Updated: 2021/05/09 14:16:15 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-void	ft_mt_free(t_mt *mt)
+int		ft_sort_index(t_arg *arg, int print)
 {
-	if (mt)
-		free(mt);
-}
+	t_markup	in;
 
-void	ft_mt_freeall(t_mt **mt)
-{
-	t_mt	*tmp;
-
-	if (!mt || !*mt)
-		return ;
-	while (*mt)
-	{
-		tmp = (*mt)->next;
-		ft_mt_free(*mt);
-		*mt = tmp;
-	}
+	ft_init_markup(&in, arg, 2);
+	return (ft_sort_markup(&in, 2, print)); // remember to free in
 }
