@@ -1,3 +1,5 @@
+# shellcheck --shell=bash
+
 # This file is meant to have example to test push_swap
 
 #	Checker:
