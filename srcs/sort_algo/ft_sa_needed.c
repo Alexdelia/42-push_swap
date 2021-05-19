@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 18:50:19 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/19 19:06:59 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/19 19:10:19 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_total_keep(t_mt *mt)
 int	ft_sa_needed(t_markup *mt)
 {
 	int	total_keep_before;
-	int	tolal_keep_after;
+	int	total_keep_after;
 
 	total_keep_before = ft_total_keep(mt->a);
 	ft_mt_s(mt, MT_A);

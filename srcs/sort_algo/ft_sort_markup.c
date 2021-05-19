@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:29:10 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/19 19:05:16 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/19 19:10:57 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	ft_a_to_b(t_markup *ma, int res, int type, int print)
 {
 	while (ft_mt_readindex(ma->a) == 2 || ft_mt_readindex(ma->a) == FALSE)
 	{
-		if (ft_sa_needed(ma, type) == TRUE)
+		if (ft_sa_needed(ma) == TRUE)
 		{
 			ft_mt_s(ma, MT_A); // do sa
 			res += ft_update_command("sa\n", print, 1);

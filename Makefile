@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/05/19 19:06:17 by adelille         ###   ########.fr        #
+#    Updated: 2021/05/19 19:15:54 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,6 +85,9 @@ SRCSNAME_PS = push_swap.c \
 				markup/ft_fill_index.c markup/ft_init_markup.c \
 				markup/ft_mt_new.c markup/ft_mt_addback.c markup/ft_mt_size.c \
 				markup/ft_mt_last.c markup/ft_mt_min.c markup/ft_mt_readindex.c \
+				markup/mt_operation/ft_mt_s.c \
+				markup/mt_operation/ft_mt_p.c \
+				markup/mt_operation/ft_mt_r.c \
 				ft_check_sort.c \
 				ft_operation/ft_op_s.c \
 				ft_operation/ft_op_p.c \
@@ -128,7 +131,7 @@ clean:
 
 
 fclean: clean
-	@$(RM) $(CH) $(PS)
+	@$(RM) $(CH) $(PS) *.o
 	@make -C $(LBPATH) -f Makefile fclean
 
 re: fclean all
