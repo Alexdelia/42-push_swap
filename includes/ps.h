@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/09 14:18:00 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/19 18:59:50 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ int		ft_sort_index(t_arg *arg, int print);
 void	ft_init_markup(t_markup *ma, t_arg *arg, int type);
 int		ft_fill_index(t_mt **mt, int nb, int index);
 int		ft_sort_markup(t_markup *ma, int type, int print);
+int		ft_sa_needed(t_markup *mt);
+int		ft_total_keep(t_mt *mt);
 
 t_mt	*ft_mt_new(int nb, int index, int keep);
 void	ft_mt_addback(t_mt **alst, t_mt *new);

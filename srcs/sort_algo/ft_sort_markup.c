@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:29:10 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/02 15:02:48 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/19 19:05:16 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static int	ft_a_to_b(t_markup *ma, int res, int type, int print)
 {
 	while (ft_mt_readindex(ma->a) == 2 || ft_mt_readindex(ma->a) == FALSE)
 	{
-		if (ft_sa_needed(ma->a) == TRUE)
+		if (ft_sa_needed(ma, type) == TRUE)
 		{
-			// do sa
+			ft_mt_s(ma, MT_A); // do sa
 			res += ft_update_command("sa\n", print, 1);
 			if (type == 1)
 				ft_fill_greater_keep(&ma->a);
@@ -34,12 +34,12 @@ static int	ft_a_to_b(t_markup *ma, int res, int type, int print)
 		}
 		else if (ma->a->index == FALSE)
 		{
-			// do pb
+			ft_mt_p(ma, MT_B); // do pb
 			res += ft_update_command("pb\n", print, 1);
 		}
 		else
 		{
-			// do ra
+			ft_mt_r(ma, MT_A); // do ra
 			res += ft_update_command("ra\n", print, 1);
 		}
 	}
