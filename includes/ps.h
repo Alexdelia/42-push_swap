@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/19 19:14:37 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/19 19:31:41 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ t_mt	*ft_mt_last(t_mt *lst);
 int		ft_mt_min(t_mt *mt);
 int		ft_mt_nextmin(t_mt *mt, int over);
 int		ft_mt_readindex(t_mt *mt);
+void	ft_mt_free(t_mt *mt);
+void	ft_mt_freeall(t_mt **mt);
 
 void	ft_mt_s(t_markup *mt, int type);
 void	ft_mt_ss(t_markup *mt);

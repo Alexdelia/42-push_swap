@@ -6,7 +6,7 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 15:47:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/23 21:14:36 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/19 19:30:12 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@
 # include <unistd.h>
 # include "get_next_line.h"
 
-# define TRUE 1
-# define FALSE 0
+# define STDIN	0
+# define STDOUT	1
+# define STDERR	2
+
+# define TRUE	1
+# define FALSE	0
 
 typedef struct s_list
 {
@@ -90,6 +94,8 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(int));
 
 int				ft_ps(char *str);
 int				ft_psc(char *str, char *color);
+int				ft_pser(char *str);
+int				ft_pserc(char *str, char *color);
 int				ft_strcmp(const char *s1, const char *s2);
 
 #endif

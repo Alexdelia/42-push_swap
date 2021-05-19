@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 22:50:14 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/09 13:44:18 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/19 19:23:15 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ void	ft_mt_r(t_markup *mt, int type)
 		tmp = mt->b;
 		mt->b = mt->b->next;
 		ft_mt_addback(&mt->b, ft_mt_new(tmp->nb, tmp->index, tmp->keep));
+	}
+	else
+	{
+		ft_pser("Wrong type in ra-rb");
+		tmp = mt->a;
 	}
 	ft_mt_free(tmp);
 }
