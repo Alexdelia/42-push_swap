@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 13:57:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/02 14:22:29 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/20 22:44:16 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static void	ft_process_markup(t_markup *ma, int type)
 	ma->a = head;
 }
 
-void		ft_init_markup(t_markup *ma, t_arg *arg, int type)
+void	ft_init_markup(t_markup *ma, t_arg *arg, int type)
 {
 	if (arg->v == TRUE)
 		ft_ps("Filling ...");

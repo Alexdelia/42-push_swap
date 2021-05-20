@@ -6,13 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 14:35:14 by adelille          #+#    #+#             */
-/*   Updated: 2021/04/02 05:39:51 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/20 22:49:06 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int		ft_dor(t_arg *arg, char *line)
+int	ft_dor(t_arg *arg, char *line)
 {
 	int	err;
 
@@ -41,7 +41,7 @@ int		ft_dor(t_arg *arg, char *line)
 	return (err);
 }
 
-int		ft_doop(t_arg *arg, char *line)
+int	ft_doop(t_arg *arg, char *line)
 {
 	int	err;
 
@@ -86,7 +86,7 @@ void	ft_output(t_arg arg)
 	}
 }
 
-int		ft_checking(t_arg *arg)
+int	ft_checking(t_arg *arg)
 {
 	char	*line;
 

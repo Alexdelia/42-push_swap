@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/19 19:38:03 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/20 22:43:11 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # define MT_A	0
 # define MT_B	1
 
-typedef struct	s_arg
+typedef struct s_arg
 {
 	int			v;
 	int			c;
@@ -29,7 +29,7 @@ typedef struct	s_arg
 	t_list		*chunk;
 }				t_arg;
 
-typedef struct				s_markup_list
+typedef struct s_markup_list
 {
 	int						nb;
 	int						index;
@@ -37,7 +37,7 @@ typedef struct				s_markup_list
 	struct s_markup_list	*next;
 }							t_mt;
 
-typedef struct	s_markup
+typedef struct s_markup
 {
 	t_mt		*a;
 	t_mt		*b;

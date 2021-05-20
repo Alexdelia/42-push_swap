@@ -6,13 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 13:44:26 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/02 14:54:53 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/20 22:46:07 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int		ft_sort_greater(t_arg *arg, int print)
+int	ft_sort_greater(t_arg *arg, int print)
 {
 	t_markup	gr;
 

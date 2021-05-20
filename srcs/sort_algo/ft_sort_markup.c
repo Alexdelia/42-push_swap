@@ -6,13 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:29:10 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/19 19:10:57 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/20 22:45:53 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int			ft_update_command(char *command, int print, int nb_command)
+int	ft_update_command(char *command, int print, int nb_command)
 {
 	if (print == TRUE)
 		ft_ps(command);
@@ -57,7 +57,7 @@ static int	ft_b_to_a(t_markup *ma, int res, int print)
 	}
 }
 
-int			ft_sort_markup(t_markup *ma, int type, int print)
+int	ft_sort_markup(t_markup *ma, int type, int print)
 {
 	int		res;
 

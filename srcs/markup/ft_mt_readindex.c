@@ -6,13 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:40:13 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/02 14:44:11 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/20 22:45:07 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int		ft_mt_readindex(t_mt *mt)
+int	ft_mt_readindex(t_mt *mt)
 {
 	int		t;
 	int		f;
