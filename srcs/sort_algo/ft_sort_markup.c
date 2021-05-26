@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:29:10 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/20 22:45:53 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/26 17:51:19 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,21 @@ static int	ft_a_to_b(t_markup *ma, int res, int type, int print)
 
 static int	ft_b_to_a(t_markup *ma, int res, int print)
 {
+	int			res;
+	t_b_to_a	f;
+
+	res = 0;
 	while (ma->b)
 	{
+		f = ft_init_f();
 		// choose element in b moving to a
+		f = ft_b_to_a_best(*ma, f);
 		// move a and b to prepare them for pa with choosen element
-		// do pa
-		// print if needed
+		res += ft_b_to_a_move(ma, f);
+		ft_mt_p(ma, MT_A); // do pa
+		res += ft_update_command("pa\n", print, 1); // print if needed
 	}
+	return (res);
 }
 
 int	ft_sort_markup(t_markup *ma, int type, int print)

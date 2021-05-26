@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/20 22:43:11 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/25 16:30:31 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 
 # define MT_A	0
 # define MT_B	1
+
+# define R_UP	1
+# define R_DOWN	-1
 
 typedef struct s_arg
 {
@@ -42,6 +45,13 @@ typedef struct s_markup
 	t_mt		*a;
 	t_mt		*b;
 }				t_markup;
+
+typedef struct s_b_to_a
+{
+	int			b;
+	int			a;
+	int			r;
+}				t_b_to_a;
 
 int		ft_arg(t_arg *arg, int ac, char **av);
 int		ft_is_int(char *str);
