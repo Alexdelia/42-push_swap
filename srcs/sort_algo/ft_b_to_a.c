@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:35:25 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/26 18:21:11 by adelille         ###   ########.fr       */
+/*   Updated: 2021/05/31 15:16:45 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,9 +116,4 @@ t_b_to_a	ft_b_to_a_best(t_markup ma, t_b_to_a f)
 		}
 	}
 	return (f);
-}
-
-int	ft_b_to_a_move(t_markup *ma, t_b_to_a f)
-{
-
 }
