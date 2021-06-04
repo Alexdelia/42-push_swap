@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:29:10 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/26 17:51:19 by adelille         ###   ########.fr       */
+/*   Updated: 2021/06/04 06:57:35 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	ft_a_to_b(t_markup *ma, int res, int type, int print)
 	return (res);
 }
 
-static int	ft_b_to_a(t_markup *ma, int res, int print)
+static int	ft_b_to_a(t_markup *ma, int print)
 {
 	int			res;
 	t_b_to_a	f;
@@ -58,7 +58,7 @@ static int	ft_b_to_a(t_markup *ma, int res, int print)
 		// choose element in b moving to a
 		f = ft_b_to_a_best(*ma, f);
 		// move a and b to prepare them for pa with choosen element
-		res += ft_b_to_a_move(ma, f);
+		res += ft_b_to_a_move(ma, f, print);
 		ft_mt_p(ma, MT_A); // do pa
 		res += ft_update_command("pa\n", print, 1); // print if needed
 	}
@@ -70,8 +70,8 @@ int	ft_sort_markup(t_markup *ma, int type, int print)
 	int		res;
 
 	res = ft_a_to_b(ma, 0, type, print);
-	res = ft_b_to_a(ma, res, print);
-	res = ft_align_a(ma, res, print);
+	res += ft_b_to_a(ma, print);
+	res += ft_align_a(ma, print);
 	ft_free_markup(ma);
 	return (res);
 }
