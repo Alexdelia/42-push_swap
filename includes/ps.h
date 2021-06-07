@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/06/04 06:56:47 by adelille         ###   ########.fr       */
+/*   Updated: 2021/06/07 23:03:01 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,11 @@ int		ft_sa_needed(t_markup *mt);
 int		ft_total_keep(t_mt *mt);
 void	ft_free_markup(t_markup *ma);
 
+int			ft_update_command(char *command, int print, int nb_command);
 t_b_to_a	ft_init_f(void);
 t_b_to_a	ft_b_to_a_best(t_markup ma, t_b_to_a f);
 int			ft_b_to_a_move(t_markup *ma, t_b_to_a f, int print);
+int			ft_align_a(t_markup *ma, int print);
 
 t_mt	*ft_mt_new(int nb, int index, int keep);
 void	ft_mt_addback(t_mt **alst, t_mt *new);
