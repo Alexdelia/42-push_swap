@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/06/07 22:56:15 by adelille         ###   ########.fr        #
+#    Updated: 2021/06/11 04:02:47 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,7 +86,7 @@ SRCSNAME_PS = push_swap.c \
 				markup/ft_fill_index.c markup/ft_init_markup.c \
 				markup/ft_mt_new.c markup/ft_mt_addback.c markup/ft_mt_size.c \
 				markup/ft_mt_last.c markup/ft_mt_min.c markup/ft_mt_readindex.c \
-				markup/ft_mt_free.c markup/ft_free_markup.c \
+				markup/ft_mt_free.c markup/ft_free_markup.c markup/ft_mt_addfront.c \
 				markup/mt_operation/ft_mt_s.c \
 				markup/mt_operation/ft_mt_p.c \
 				markup/mt_operation/ft_mt_r.c \

@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/06/07 23:03:01 by adelille         ###   ########.fr       */
+/*   Updated: 2021/06/11 04:02:26 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ int			ft_align_a(t_markup *ma, int print);
 
 t_mt	*ft_mt_new(int nb, int index, int keep);
 void	ft_mt_addback(t_mt **alst, t_mt *new);
+void	ft_mt_addfront(t_mt **mt, t_mt *new);
 int		ft_mt_size(t_mt *lst);
 t_mt	*ft_mt_last(t_mt *lst);
 int		ft_mt_min(t_mt *mt);
@@ -97,7 +98,7 @@ void	ft_mt_s(t_markup *mt, int type);
 void	ft_mt_ss(t_markup *mt);
 void	ft_mt_p(t_markup *mt, int type);
 void	ft_mt_r(t_markup *mt, int type);
-//void	ft_mt_rr(t_markup *mt, int type);
+void	ft_mt_rr(t_markup *mt, int type);
 
 int		ft_advance_separate(t_arg *arg);
 
