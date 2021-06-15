@@ -6,13 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 15:16:03 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/31 15:39:56 by adelille         ###   ########.fr       */
+/*   Updated: 2021/06/15 18:25:10 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int	ft_move_up_b_to_a(t_markup *ma, t_b_to_a f, print)
+int	ft_move_up_b_to_a(t_markup *ma, t_b_to_a f, int print)
 {
 	int	operation;
 
@@ -36,7 +36,7 @@ int	ft_move_up_b_to_a(t_markup *ma, t_b_to_a f, print)
 	return (operation);
 }
 
-int	ft_move_down_b_to_a(t_markup *ma, t_b_to_a f, print)
+int	ft_move_down_b_to_a(t_markup *ma, t_b_to_a f, int print)
 {
 	int	operation;
 
@@ -60,7 +60,7 @@ int	ft_move_down_b_to_a(t_markup *ma, t_b_to_a f, print)
 	return (operation);
 }
 
-int	ft_find_close(t_mt *x, int nb)
+int	ft_find_close_ba(t_mt *x, int nb)
 {
 	int	i;
 	int size;
@@ -87,7 +87,7 @@ int	ft_move_find_b_to_a(t_markup *ma, t_b_to_a f, int print)
 	int	operation;
 
 	operation = 0;
-	if (ft_find_close(ma->a, f.a) == R_UP)
+	if (ft_find_close_ba(ma->a, f.a) == R_UP)
 	{
 		while (ma->a->nb != f.a)
 		{
@@ -103,7 +103,7 @@ int	ft_move_find_b_to_a(t_markup *ma, t_b_to_a f, int print)
 			operation += ft_update_command("rra\n", print, 1);
 		}
 	}
-	if (ft_find_close(ma->b, f.b) == R_UP)
+	if (ft_find_close_ba(ma->b, f.b) == R_UP)
 	{
 		while (ma->b->nb != f.b)
 		{

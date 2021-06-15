@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/06/11 04:02:47 by adelille         ###   ########.fr        #
+#    Updated: 2021/06/15 18:23:00 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,6 +81,8 @@ SRCSNAME_PS = push_swap.c \
 				sort_algo/ft_sort_greater.c sort_algo/ft_sort_index.c \
 				sort_algo/ft_sort_markup.c \
 				sort_algo/ft_sa_needed.c \
+				sort_algo/ft_b_to_a.c \
+				sort_algo/ft_b_to_a.c sort_algo/ft_b_to_a_move.c \
 				sort_algo/ft_align_a.c \
 				markup/ft_fill_greater_keep.c markup/ft_fill_index_keep.c \
 				markup/ft_fill_index.c markup/ft_init_markup.c \

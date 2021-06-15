@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 22:50:14 by adelille          #+#    #+#             */
-/*   Updated: 2021/06/11 03:59:00 by adelille         ###   ########.fr       */
+/*   Updated: 2021/06/15 18:21:14 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ void	ft_mt_rr(t_markup *mt, int type)
 		ft_mt_addfront(&mt->a, ft_mt_new(f->nb, f->index, f->keep));
 	else if (type == MT_B)
 		ft_mt_addfront(&mt->b, ft_mt_new(f->nb, f->index, f->keep));
+	tmp->next = NULL;
 	ft_mt_free(f);
 }

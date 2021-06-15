@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 16:35:25 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/31 15:16:45 by adelille         ###   ########.fr       */
+/*   Updated: 2021/06/15 18:22:33 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ int	ft_suitable_a(t_mt *a, int b)
 	{
 		if (a->nb < over && a->nb > b)
 		{
-			under = a->nb;
+			over = a->nb;
 			v = TRUE;
 		}
 	}
 	if (v == FALSE)
 		return (b);
-	return (under);
+	return (over);
 }
 
 int	ft_i_suitable_a(t_mt *a, int b)
@@ -85,7 +85,7 @@ t_b_to_a	ft_b_to_a_best(t_markup ma, t_b_to_a f)
 			r = 0;
 			i_a = ft_i_suitable_a(ma.a, ma.b->nb);
 			if ((i_a >= size_a / 2 && i_b >= size_b / 2)
-					|| i_a < size_a / 2 && i_b < size_b / 2)
+					|| (i_a < size_a / 2 && i_b < size_b / 2))
 			{
 				r = R_UP;
 				if (i_a >= size_a / 2 && i_b >= size_b / 2)
