@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:29:10 by adelille          #+#    #+#             */
-/*   Updated: 2021/06/04 06:57:35 by adelille         ###   ########.fr       */
+/*   Updated: 2021/06/23 16:30:03 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ static int	ft_a_to_b(t_markup *ma, int res, int type, int print)
 {
 	while (ft_mt_readindex(ma->a) == 2 || ft_mt_readindex(ma->a) == FALSE)
 	{
+		ft_pserc("HERE\n", RED);
 		if (ft_sa_needed(ma) == TRUE)
 		{
+			ft_pserc("1\n", RED);
 			ft_mt_s(ma, MT_A); // do sa
 			res += ft_update_command("sa\n", print, 1);
 			if (type == 1)
@@ -34,11 +36,13 @@ static int	ft_a_to_b(t_markup *ma, int res, int type, int print)
 		}
 		else if (ma->a->index == FALSE)
 		{
-			ft_mt_p(ma, MT_B); // do pb
+			ft_pserc("2\n", RED);
+			ft_mt_p(&ma->b, &ma->a); // do pb
 			res += ft_update_command("pb\n", print, 1);
 		}
 		else
 		{
+			ft_pserc("3\n", RED);
 			ft_mt_r(ma, MT_A); // do ra
 			res += ft_update_command("ra\n", print, 1);
 		}
@@ -59,7 +63,7 @@ static int	ft_b_to_a(t_markup *ma, int print)
 		f = ft_b_to_a_best(*ma, f);
 		// move a and b to prepare them for pa with choosen element
 		res += ft_b_to_a_move(ma, f, print);
-		ft_mt_p(ma, MT_A); // do pa
+		ft_mt_p(&ma->a, &ma->b); // do pa
 		res += ft_update_command("pa\n", print, 1); // print if needed
 	}
 	return (res);

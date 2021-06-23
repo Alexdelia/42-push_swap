@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/06/11 04:02:26 by adelille         ###   ########.fr       */
+/*   Updated: 2021/06/23 16:28:50 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,8 @@ void	ft_mt_freeall(t_mt **mt);
 
 void	ft_mt_s(t_markup *mt, int type);
 void	ft_mt_ss(t_markup *mt);
-void	ft_mt_p(t_markup *mt, int type);
+//void	ft_mt_p(t_markup *mt, int type);
+void	ft_mt_p(t_mt **dst, t_mt **src);
 void	ft_mt_r(t_markup *mt, int type);
 void	ft_mt_rr(t_markup *mt, int type);
 
