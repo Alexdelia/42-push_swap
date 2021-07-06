@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 19:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/03/29 15:58:42 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/06 15:51:30 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,14 @@
 
 int	main(int ac, char **av)
 {
-	t_arg	arg;
-	int		v;
+	t_markup	*ma_index;
+	t_markup	*ma_gt;
+	t_arg_list	*arg_index;
+	t_arg_list	*arg_gt;
+
+	if (ac < 2)
+		return (ft_pser("Error: Not enough argument\n") * 0 + 1);
+	ft_check_duplicate((ma_index = ft_parse(ac, av)));
 
 	v = ft_visual(av);
 	if (v == TRUE)

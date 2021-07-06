@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/06/23 16:28:50 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/06 16:06:02 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,31 @@
 
 typedef struct s_arg
 {
-	int			v;
-	int			c;
-	int			err;
-	t_list		*a;
-	t_list		*b;
-	t_list		*chunk;
-}				t_arg;
+	char			*name;
+	struct s_arg	*next;
+}					t_arg;
+
+typedef struct s_arg_list
+{
+	int			size;
+	t_arg		*head;
+}				t_arg_list;
 
 typedef struct s_markup_list
 {
 	int						nb;
 	int						index;
 	int						keep;
+	struct s_markup_list	*prev;
 	struct s_markup_list	*next;
 }							t_mt;
 
 typedef struct s_markup
 {
-	t_mt		*a;
-	t_mt		*b;
+	int			size;
+	int			pairs;
+	t_mt		*head;
+	t_mt		*markup_head;
 }				t_markup;
 
 typedef struct s_b_to_a
@@ -52,6 +57,9 @@ typedef struct s_b_to_a
 	int			a;
 	int			r;
 }				t_b_to_a;
+
+void	ft_check_duplicate(t_markup	*ma);
+
 
 int		ft_arg(t_arg *arg, int ac, char **av);
 int		ft_is_int(char *str);
@@ -139,7 +147,9 @@ void	ft_put_row_sa(t_arg arg, int i);
 void	ft_put_row_sb(t_arg arg, int i);
 void	ft_put_row_ss(t_arg arg, int i);
 
+void	ft_exit(char *text);
 int		ft_error(char *text);
+void	*ft_memalloc(size_t size);
 long	ft_atol(char *str);
 int		ft_visual(char **av);
 

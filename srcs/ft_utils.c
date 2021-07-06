@@ -6,16 +6,32 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 18:48:17 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/20 22:48:38 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/06 16:05:40 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
+void	ft_exit(char *text)
+{
+	write(2, text, ft_strlen(text));
+	exit(1);
+}
+
 int	ft_error(char *text)
 {
 	write(2, text, ft_strlen(text));
 	return (FALSE);
+}
+
+void	*ft_memalloc(size_t size)
+{
+	void	*p;
+
+	p = malloc(size);
+	if (p)
+		ft_bzero(p, size);
+	return (p);
 }
 
 long	ft_atol(char *str)
