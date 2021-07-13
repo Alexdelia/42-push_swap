@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 19:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/12 15:12:02 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/13 15:17:48 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int ac, char **av)
 	ft_check_duplicate((ma_index = ft_parse(ac, av)));
 	ft_index(ma_index);
 	ft_markup_option(ma_index, &ft_markup_index);
+	arg_index = ft_solve(ma_index, &ft_markup_index);
 
 	v = ft_visual(av);
 	if (v == TRUE)
