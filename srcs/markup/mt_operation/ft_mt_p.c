@@ -6,40 +6,18 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 22:46:36 by adelille          #+#    #+#             */
-/*   Updated: 2021/06/23 16:30:59 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/15 20:42:48 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-/*void	ft_mt_p(t_markup *mt, int type)
+void	ft_mt_p(t_markup *dst, t_markup *src,
+		const char *name, t_arg_list *arg_list)
 {
-	t_mt	*tmp;
-
-	if (type == MT_A)
-	{
-		tmp = mt->a;
-		mt->a = mt->b;
-		mt->a->next = tmp;
-		mt->b = mt->b->next;
-	}
-	else if (type == MT_B)
-	{
-		tmp = mt->b;
-		mt->b = mt->a;
-		mt->b->next = tmp;
-		mt->a = mt->a->next;
-	}
-}*/
-
-void	ft_mt_p(t_mt **dst, t_mt **src)
-{
-	t_mt	*tmp;
-
-	if (src == NULL || (*src) == NULL)
-		return ;
-	tmp = *src;
-	ft_mt_addfront(dst, ft_mt_new(tmp->nb, tmp->index, tmp->keep));
-	*(src) = (*src)->next;
-	ft_mt_free(tmp);
+	ft_push(dst, ft_pop(src));
+	if (name && !arg_list)
+		ft_ps(name);
+	if (name && arg_list)
+		ft_add_command(arg_list, ft_create_command(name)); // to code
 }
