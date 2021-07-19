@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/06 16:06:02 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/19 17:28:17 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,24 @@ typedef struct s_markup
 	t_mt		*head;
 	t_mt		*markup_head;
 }				t_markup;
+
+typedef struct s_solve_b_shift
+{
+	t_mt	*mt_a;
+	t_mt	*mt_b;
+	int		dir_a;
+	int		dir_b;
+	int		size;
+	int		set;
+}			t_sbs;
+
+typedef struct s_rotate_size
+{
+	int		ra;
+	int		rra;
+	int		rb;
+	int		rrb;
+}			t_rxs;
 
 typedef struct s_b_to_a
 {
