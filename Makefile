@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/07/20 15:43:01 by adelille         ###   ########.fr        #
+#    Updated: 2021/07/20 15:50:43 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,8 +58,8 @@ SRCSNAME_CH = checker/checker.c \
 				checker/ft_operation/ft_op_p.c \
 				checker/ft_operation/ft_op_r.c \
 				checker/ft_lst_color.c \
-				checker/ft_put_row.c
-				ft_utils.c \
+				checker/ft_put_row.c \
+				ft_utils.c
 
 SRCS_CH = $(addprefix $(SRCSPATH), $(SRCSNAME_CH))
 OBJSNAME_CH = $(SRCSNAME_CH:.c=.o)
@@ -74,6 +74,7 @@ SRCSNAME_PS = push_swap.c \
 				markup/mt_operation/ft_mt_s.c \
 				markup/mt_operation/ft_mt_p.c \
 				markup/mt_operation/ft_mt_r.c \
+				markup/mt_operation/ft_push_pop.c \
 				solve/ft_solve.c solve/ft_solve_a.c solve/ft_solve_b.c \
 				ft_find_direction.c \
 				ft_init.c ft_utils.c ft_utils_2.c

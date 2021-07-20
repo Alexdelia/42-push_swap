@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 15:17:56 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/20 15:16:33 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/20 16:05:43 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static void	ft_align_a(t_markup *a, t_arg_list *arg_list)
 			current = current->prev;
 		}
 		while (a->head->index != 0 && (ra_size < rra_size))
-			ft_mt_rx(a, "ra\n" arg_list);
+			ft_mt_rx(a, "ra\n", arg_list);
 		while (a->head->index != 0 && !(ra_size < rra_size))
 			ft_mt_rrx(a, "rra\n", arg_list);
 	}

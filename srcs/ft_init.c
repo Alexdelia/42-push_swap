@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 15:23:07 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/13 15:30:36 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/20 15:49:10 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_arg_list	*ft_init_arg_list(void)
 {
 	t_arg_list	*arg_list;
 
-	arg_list = (t_arg_list *)ft_memalloc(sizeof(t_markup))
+	arg_list = (t_arg_list *)ft_memalloc(sizeof(t_markup));
 	if (!arg_list)
 		ft_exit("Error: Malloc failed in ft_init_arg_list\n");
 	arg_list->size = 0;
@@ -28,7 +28,7 @@ t_markup	*ft_init_stack(void)
 {
 	t_markup	*ma;
 
-	ma = (t_markup *)ft_memalloc(sizeof(t_markup))
+	ma = (t_markup *)ft_memalloc(sizeof(t_markup));
 	if (!ma)
 		ft_exit("Error: Malloc failed in ft_init_stack\n");
 	ma->size = 0;

@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 22:50:14 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/15 20:54:57 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/20 15:54:21 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_mt_rrx(t_markup *ma, const char *name, t_arg_list *arg_list)
 		ft_add_command(arg_list, ft_create_command(name)); // to code
 }
 
-void	ft_mt_rr(t_markup *a, t_markup *b,
+void	ft_mt_rrr(t_markup *a, t_markup *b,
 		const char *name, t_arg_list *arg_list)
 {
 	ft_mt_rrx(a, NULL, NULL);

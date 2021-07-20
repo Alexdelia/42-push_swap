@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 17:23:04 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/19 17:51:26 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/20 15:48:50 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	ft_find_dir(t_markup *a, t_markup *b, t_sbs *sbs)
 	{
 		i = 0;
 		current = b->head;
-		while (i < b->size);
+		while (i < b->size)
 		{
 			ft_optimal_dir(a, b, current, sbs);
 			i++;

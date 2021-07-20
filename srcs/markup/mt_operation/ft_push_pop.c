@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 20:43:01 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/15 20:48:26 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/20 16:06:23 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_mt	*ft_pop(t_markup *ma)
 	mt = NULL;
 	if (ma && ma->size)
 	{
-		if (ma->sie == 1)
+		if (ma->size == 1)
 		{
 			mt = ma->head;
 			ma->head = NULL;
@@ -58,7 +58,7 @@ t_mt	*ft_pop(t_markup *ma)
 		}
 		mt->prev = NULL;
 		mt->next = NULL;
-		stack->size--;
+		ma->size--;
 	}
 	return (mt);
 }

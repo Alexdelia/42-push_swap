@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 20:28:25 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/15 20:41:56 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/20 16:00:23 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_need_pb(t_markup *a)
 	{
 		i = 0;
 		tmp = a->head;
-		while (i < a->sise)
+		while (i < a->size)
 		{
 			if (!tmp->keep)
 				return (TRUE);
@@ -58,8 +58,8 @@ void	ft_solve_a(t_markup *a, t_markup *b,
 			ft_mt_sx(a, "sa\n", arg_list);
 			a->pairs = ft_ma(a, a->markup_head);
 		}
-		else if (a->head->keep == false)
-			ft_mt_px(b, a, "pb\n", arg_list);
+		else if (a->head->keep == FALSE)
+			ft_mt_p(b, a, "pb\n", arg_list);
 		else
 			ft_mt_rx(a, "ra\n", arg_list);
 	}
