@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 19:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/13 15:17:48 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/20 15:23:29 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,16 @@ int	main(int ac, char **av)
 	ft_index(ma_index);
 	ft_markup_option(ma_index, &ft_markup_index);
 	arg_index = ft_solve(ma_index, &ft_markup_index);
-
-	v = ft_visual(av);
-	if (v == TRUE)
-		ft_psc("\nParsing ...\t", "\033[1;29m");
-	ft_arg(&arg, ac, av);
-	if (arg.err == TRUE)
-		return (0);
-	if (v == TRUE)
-	{
-		ft_psc("Done\n", GRN);
-		ft_psc("Sorting ...\n", "\033[1;29m");
-	}
-	ft_find_best_algo(&arg);
-	ft_lstclear(&arg.a);
-	if (arg.b)
-		ft_lstclear(&arg.b);
+	ft_free_stack(ma_index);
+	ft_index(ma_gt = ft_parse(ac, av));
+	ft_markup_option(ma_gt, &ft_markup_gt);
+	arg_gt = ft_solve(ma_gt, &ft_markup_gt);
+	ft_free_stack(ma_gt);
+	if (arg_index->size < arg_gt->size)
+		ft_prints_commands(arg_index);
+	else
+		ft_prints_commands(arg_gt);
+	ft_free_arg_list(arg_index);
+	ft_free_arg_list(arg_gt);
+	return (0);
 }

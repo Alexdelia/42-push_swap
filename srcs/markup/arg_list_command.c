@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 23:25:38 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/16 23:33:06 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/20 15:25:28 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,21 @@ void	ft_print_commands(t_arg_list *arg_list)
 	{
 		ft_ps(current->name);
 		current = current->next;
-		// might free here
 	}
+}
+
+void	ft_free_arg_list(t_arg_list *arg_list)
+{
+	t_arg	*tmp;
+	t_arg	*del;
+
+	tmp = arg_list->head;
+	while (tmp)
+	{
+		del = arg_list;
+		arg_list = arg_list->next;
+		free(del->name);
+		free(del);
+	}
+	free(arg_list);
 }
