@@ -6,13 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 23:25:38 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/20 15:25:28 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/21 22:54:37 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-t_arg	*ft_create_command(const char *name)
+t_arg	*ft_create_command(char *name)
 {
 	t_arg	*arg;
 
@@ -35,7 +35,7 @@ void	ft_add_command(t_arg_list *arg_list, t_arg *arg)
 		else
 		{
 			last = arg_list->head;
-			while (last-next)
+			while (last->next)
 				last = last->next;
 			last->next = arg;
 		}
@@ -63,8 +63,8 @@ void	ft_free_arg_list(t_arg_list *arg_list)
 	tmp = arg_list->head;
 	while (tmp)
 	{
-		del = arg_list;
-		arg_list = arg_list->next;
+		del = tmp;
+		tmp = tmp->next;
 		free(del->name);
 		free(del);
 	}

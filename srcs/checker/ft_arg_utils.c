@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 19:13:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/01 12:08:54 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/21 23:10:59 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,20 @@ int	ft_isnt_in(t_list *lst, int nb)
 
 int	ft_max_min_in(t_list *a, char *str)
 {
-	if (atol(str) > INT_MAX)
+	if (ft_atol(str) > INT_MAX)
 		return (ft_error("Error: one int is over INT_MAX\n"));
-	if (atol(str) < INT_MIN)
+	if (ft_atol(str) < INT_MIN)
 		return (ft_error("Error: one int is under INT_MIN\n"));
 	if (ft_isnt_in(a, ft_atoi(str)) == FALSE)
 		return (FALSE);
+	return (TRUE);
+}
+
+int	ft_max_min(char *str)
+{
+	if (ft_atol(str) > INT_MAX)
+		return (ft_error("Error: one int is over INT_MAX\n"));
+	if (ft_atol(str) < INT_MIN)
+		return (ft_error("Error: one int is under INT_MIN\n"));
 	return (TRUE);
 }

@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 22:35:37 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/15 21:01:09 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/21 22:45:09 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	ft_swap(t_mt *s1, t_mt *s2, t_markup *ma)
 	ma->head = s2;
 }
 
-void	ft_mt_sx(t_markup *ma, const char *name, t_arg_list *arg_list)
+void	ft_mt_sx(t_markup *ma,char *name, t_arg_list *arg_list)
 {
 	if (ma && ma->head && ma->size >= 2)
 		ft_swap(ma->head, ma->head->next, ma);
@@ -39,12 +39,12 @@ void	ft_mt_sx(t_markup *ma, const char *name, t_arg_list *arg_list)
 }
 
 void	ft_mt_ss(t_markup *a, t_markup *b,
-		const char *name, t_arg_list *arg_list)
+		char *name, t_arg_list *arg_list)
 {
 	ft_mt_sx(a, NULL, NULL);
 	ft_mt_sx(b, NULL, NULL);
 	if (name && !arg_list)
 		ft_ps(name);
-	if (name && arg_list
+	if (name && arg_list)
 		ft_add_command(arg_list, ft_create_command(name));
 }

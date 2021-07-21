@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 16:02:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/08 17:53:21 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/21 22:57:16 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	ft_fill_stack(t_markup *ma, int ac, char **av)
 	{
 		if (ft_is_int(av[i]) == FALSE || ft_max_min(av[i]) == FALSE)
 		{
-			free_stack(ma);
+			ft_free_stack(ma);
 			exit(1);
 		}
 		ft_mt_add(ma, ft_mt_new(ft_atoi(av[i])));
@@ -33,7 +33,7 @@ t_markup	*ft_parse(int ac, char **av)
 {
 	t_markup	*ma;
 
-	ma = (t_markup *)ft_memalloc(sizeof(t_markup))
+	ma = (t_markup *)ft_memalloc(sizeof(t_markup));
 	if (!ma)
 		ft_exit("Error: Malloc failed\n");
 	ma->head = NULL;

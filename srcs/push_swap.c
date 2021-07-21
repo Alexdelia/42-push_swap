@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 19:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/20 15:23:29 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/21 23:00:01 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int	main(int ac, char **av)
 	arg_gt = ft_solve(ma_gt, &ft_markup_gt);
 	ft_free_stack(ma_gt);
 	if (arg_index->size < arg_gt->size)
-		ft_prints_commands(arg_index);
+		ft_print_commands(arg_index);
 	else
-		ft_prints_commands(arg_gt);
+		ft_print_commands(arg_gt);
 	ft_free_arg_list(arg_index);
 	ft_free_arg_list(arg_gt);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 15:54:25 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/06 16:00:51 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/21 22:54:52 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_check_duplicate(t_markup	*ma)
 		y = x->next;
 		while (y != x)
 		{
-			if (x->nb == y->nb);
+			if (x->nb == y->nb)
 				ft_exit("Error: One int is present multiple times\n");
 			y = y->next;
 		}

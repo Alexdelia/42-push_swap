@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 15:12:34 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/12 15:22:12 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/21 22:47:01 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_markup_index(t_markup *ma, t_mt *head)
 	if (ma && head)
 	{
 		index = head->index;
-		head->keep = true;
+		head->keep = TRUE;
 		current = head->next;
 		while (current != head)
 		{
@@ -30,10 +30,10 @@ int	ft_markup_index(t_markup *ma, t_mt *head)
 			{
 				pairs++;
 				index++;
-				current->keep = true;
+				current->keep = TRUE;
 			}
 			else
-				current->keep = false;
+				current->keep = FALSE;
 			current = current->next;
 		}
 	}
@@ -50,7 +50,7 @@ int	ft_markup_gt(t_markup *ma, t_mt *head)
 	if (ma && head)
 	{
 		index = head->index;
-		head->keep = true;
+		head->keep = TRUE;
 		current = head->next;
 		while (current != head)
 		{
@@ -58,10 +58,10 @@ int	ft_markup_gt(t_markup *ma, t_mt *head)
 			{
 				pairs++;
 				index = current->index;
-				current->keep = true;
+				current->keep = TRUE;
 			}
 			else
-				current->keep = false;
+				current->keep = FALSE;
 			current = current->next;
 		}
 	}

@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/07/20 15:50:43 by adelille         ###   ########.fr        #
+#    Updated: 2021/07/21 23:13:11 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,7 @@ OBJS_CH = $(OBJSPATH_CH)*.o
 
 SRCSNAME_PS = push_swap.c \
 				parse/ft_parse.c parse/ft_check_duplicate.c \
+				checker/ft_arg_utils.c \
 				markup/arg_list_command.c markup/ft_index.c \
 				markup/ft_markup_option.c \
 				markup/ft_mt_add.c markup/ft_mt_new.c \

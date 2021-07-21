@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 15:01:44 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/12 15:08:34 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/21 22:47:24 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ static t_mt	*ft_next_min(t_markup *ma)
 	if (ma)
 	{
 		i = 0;
-		b_min = false;
+		b_min = FALSE;
 		tmp = ma->head;
 		while (i < ma->size)
 		{
 			if ((tmp->index == -1) && (!b_min || tmp->nb < min->nb))
 			{
-				b_min = true;
+				b_min = TRUE;
 				min = tmp;
 			}
 			i++;
