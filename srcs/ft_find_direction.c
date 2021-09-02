@@ -6,16 +6,18 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 17:23:04 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/20 15:48:50 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/23 16:20:14 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
+//#include <stdio.h>
 
 static t_mt	*ft_find_mt_a(t_markup *a, int index)
 {
 	t_mt	*mt;
 
+	//printf("INDEX: %d\n", index);
 	mt = a->markup_head;
 	if (index < mt->index)
 	{

@@ -6,14 +6,14 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/07/21 23:13:11 by adelille         ###   ########.fr        #
+#    Updated: 2021/07/23 16:58:49 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # NAME =	
 CH =	checker
 PS =	push_swap
-CC = 	clang -Wall -Werror -Wextra
+CC = 	clang -Wall -Werror -Wextra -g
 RM = 	rm -rf
 # FLAGS =	-O2
 
@@ -68,6 +68,7 @@ OBJS_CH = $(OBJSPATH_CH)*.o
 
 SRCSNAME_PS = push_swap.c \
 				parse/ft_parse.c parse/ft_check_duplicate.c \
+				parse/ft_isint.c parse/ft_isnum.c \
 				checker/ft_arg_utils.c \
 				markup/arg_list_command.c markup/ft_index.c \
 				markup/ft_markup_option.c \

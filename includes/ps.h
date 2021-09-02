@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/21 23:12:34 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/23 17:00:14 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,9 @@ void	ft_print_commands(t_arg_list *arg_list);
 void	ft_free_arg_list(t_arg_list *arg_list);
 
 t_markup	*ft_parse(int ac, char **av);
+int	ft_isint_s(const char *str, int bool);
+int	ft_isnum_s(char *str, int base);
+int	ft_isspace_s(int c);
 void	ft_index(t_markup *ma);
 
 void	ft_markup_option(t_markup *ma, int (*ft_markup_s)(t_markup *, t_mt *));
