@@ -1,0 +1,76 @@
+* thread #1, name = 'push_swap', stop reason = step over
+    frame #0: 0x0000000000401f79 push_swap`ft_parse(ac=5, av=0x00007fffffffdf88) at ft_parse.c:77
+   74  		ma->markup_head = NULL;
+   75  		ma->size = 0;
+   76  		ma->pairs = 0;
+-> 77  		if (ac == 2 && !ft_isnum_s(av[1], 10))
+   78  			ft_parse_str(ma, av[1]);
+   79  		else
+   80  			ft_parse_arr(ma, ac, av);
+(lldb) 
+Process 2828 stopped
+* thread #1, name = 'push_swap', stop reason = step over
+    frame #0: 0x0000000000401fb4 push_swap`ft_parse(ac=5, av=0x00007fffffffdf88) at ft_parse.c:80
+   77  		if (ac == 2 && !ft_isnum_s(av[1], 10))
+   78  			ft_parse_str(ma, av[1]);
+   79  		else
+-> 80  			ft_parse_arr(ma, ac, av);
+   81  		if (!ma->size)
+   82  			ft_exit("Error: No int in argument\n");
+   83  		return (ma);
+(lldb) 
+Process 2828 stopped
+* thread #1, name = 'push_swap', stop reason = breakpoint 4.1
+    frame #0: 0x00000000004020c3 push_swap`ft_parse_arr(ma=0x0000000000606260, ac=5, av=0x00007fffffffdf88) at ft_parse.c:33
+   30  	{
+   31  		int	i;
+   32  	
+-> 33  		i = 1;
+   34  		while (i < ac)
+   35  		{
+   36  			if (!ft_isint_s(av[i], FALSE))
+(lldb) 
+Process 2828 stopped
+* thread #1, name = 'push_swap', stop reason = step over
+    frame #0: 0x00000000004020ca push_swap`ft_parse_arr(ma=0x0000000000606260, ac=5, av=0x00007fffffffdf88) at ft_parse.c:34
+   31  		int	i;
+   32  	
+   33  		i = 1;
+-> 34  		while (i < ac)
+   35  		{
+   36  			if (!ft_isint_s(av[i], FALSE))
+   37  			{
+(lldb) 
+Process 2828 stopped
+* thread #1, name = 'push_swap', stop reason = step over
+    frame #0: 0x00000000004020d8 push_swap`ft_parse_arr(ma=0x0000000000606260, ac=5, av=0x00007fffffffdf88) at ft_parse.c:36
+   33  		i = 1;
+   34  		while (i < ac)
+   35  		{
+-> 36  			if (!ft_isint_s(av[i], FALSE))
+   37  			{
+   38  				ft_free_stack(ma);
+   39  				exit(1);
+(lldb) 
+Process 2828 stopped
+* thread #1, name = 'push_swap', stop reason = step over
+    frame #0: 0x00000000004020f2 push_swap`ft_parse_arr(ma=0x0000000000606260, ac=5, av=0x00007fffffffdf88) at ft_parse.c:38
+   35  		{
+   36  			if (!ft_isint_s(av[i], FALSE))
+   37  			{
+-> 38  				ft_free_stack(ma);
+   39  				exit(1);
+   40  			}
+   41  			ft_mt_add(ma, ft_mt_new(ft_atoi(av[i])));
+(lldb) 
+Process 2828 stopped
+* thread #1, name = 'push_swap', stop reason = step over
+    frame #0: 0x0000000000402100 push_swap`ft_parse_arr(ma=0x0000000000606260, ac=5, av=0x00007fffffffdf88) at ft_parse.c:39
+   36  			if (!ft_isint_s(av[i], FALSE))
+   37  			{
+   38  				ft_free_stack(ma);
+-> 39  				exit(1);
+   40  			}
+   41  			ft_mt_add(ma, ft_mt_new(ft_atoi(av[i])));
+   42  			i++;
+(lldb) 
