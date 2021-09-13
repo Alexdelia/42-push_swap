@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/23 17:00:14 by adelille         ###   ########.fr       */
+/*   Updated: 2021/09/13 13:21:26 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <limits.h>
 # include "libft.h"
+// to remove
+# include <stdio.h>
 
 # define MT_A	0
 # define MT_B	1

@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:34:23 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/23 17:07:03 by adelille         ###   ########.fr       */
+/*   Updated: 2021/09/13 13:36:56 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int	ft_isint_s(const char *str, int bool)
 	while (!bool && ft_isspace_s(str[i]))
 		i++;
 	sign = (str[i] == '-' || str[i] == '+');
-	i++;
+	if (sign)
+		i++;
 	while (ft_isdigit_s(str[i]) && ++digits)
 	{
 		if (((res > border

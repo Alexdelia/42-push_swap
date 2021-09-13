@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 16:02:16 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/23 17:10:11 by adelille         ###   ########.fr       */
+/*   Updated: 2021/09/13 13:21:15 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static void	ft_parse_arr(t_markup *ma, int ac, char **av)
 	{
 		if (!ft_isint_s(av[i], FALSE))
 		{
+			printf("%s", av[i]);
 			ft_free_stack(ma);
 			exit(1);
 		}
