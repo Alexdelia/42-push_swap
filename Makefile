@@ -6,14 +6,14 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/06/15 18:23:00 by adelille         ###   ########.fr        #
+#    Updated: 2021/07/23 16:58:49 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # NAME =	
 CH =	checker
 PS =	push_swap
-CC = 	clang -Wall -Werror -Wextra
+CC = 	clang -Wall -Werror -Wextra -g
 RM = 	rm -rf
 # FLAGS =	-O2
 
@@ -49,17 +49,17 @@ OBJSPATH_CH =	./objs_checker/
 OBJSPATH_PS =	./objs_push_swap/
 INC =			./includes/
 
-SRCSNAME_CH = checker.c \
-				ft_arg.c \
-				ft_arg_utils.c \
-				ft_utils.c \
-				ft_checking.c \
-				ft_check_sort.c \
-				ft_operation/ft_op_s.c \
-				ft_operation/ft_op_p.c \
-				ft_operation/ft_op_r.c \
-				ft_lst_color.c \
-				ft_put_row.c
+SRCSNAME_CH = checker/checker.c \
+				checker/ft_arg.c \
+				checker/ft_arg_utils.c \
+				checker/ft_checking.c \
+				checker/ft_check_sort.c \
+				checker/ft_operation/ft_op_s.c \
+				checker/ft_operation/ft_op_p.c \
+				checker/ft_operation/ft_op_r.c \
+				checker/ft_lst_color.c \
+				checker/ft_put_row.c \
+				ft_utils.c
 
 SRCS_CH = $(addprefix $(SRCSPATH), $(SRCSNAME_CH))
 OBJSNAME_CH = $(SRCSNAME_CH:.c=.o)
@@ -67,35 +67,19 @@ OBJSNAME_CH = $(SRCSNAME_CH:.c=.o)
 OBJS_CH = $(OBJSPATH_CH)*.o
 
 SRCSNAME_PS = push_swap.c \
-				ft_arg.c \
-				ft_arg_utils.c \
-				ft_utils.c \
-				ft_find_best_algo.c \
-				sort_algo/ft_mid_sort.c \
-				sort_algo/ft_sort_3.c \
-				sort_algo/ft_separate.c \
-				sort_algo/ft_chunk.c \
-				sort_algo/ft_opti_top_bot.c \
-				sort_algo/ft_find_big_small.c \
-				sort_algo/ft_locate.c \
-				sort_algo/ft_sort_greater.c sort_algo/ft_sort_index.c \
-				sort_algo/ft_sort_markup.c \
-				sort_algo/ft_sa_needed.c \
-				sort_algo/ft_b_to_a.c \
-				sort_algo/ft_b_to_a.c sort_algo/ft_b_to_a_move.c \
-				sort_algo/ft_align_a.c \
-				markup/ft_fill_greater_keep.c markup/ft_fill_index_keep.c \
-				markup/ft_fill_index.c markup/ft_init_markup.c \
-				markup/ft_mt_new.c markup/ft_mt_addback.c markup/ft_mt_size.c \
-				markup/ft_mt_last.c markup/ft_mt_min.c markup/ft_mt_readindex.c \
-				markup/ft_mt_free.c markup/ft_free_markup.c markup/ft_mt_addfront.c \
+				parse/ft_parse.c parse/ft_check_duplicate.c \
+				parse/ft_isint.c parse/ft_isnum.c \
+				checker/ft_arg_utils.c \
+				markup/arg_list_command.c markup/ft_index.c \
+				markup/ft_markup_option.c \
+				markup/ft_mt_add.c markup/ft_mt_new.c \
 				markup/mt_operation/ft_mt_s.c \
 				markup/mt_operation/ft_mt_p.c \
 				markup/mt_operation/ft_mt_r.c \
-				ft_check_sort.c \
-				ft_operation/ft_op_s.c \
-				ft_operation/ft_op_p.c \
-				ft_operation/ft_op_r.c
+				markup/mt_operation/ft_push_pop.c \
+				solve/ft_solve.c solve/ft_solve_a.c solve/ft_solve_b.c \
+				ft_find_direction.c \
+				ft_init.c ft_utils.c ft_utils_2.c
 
 SRCS_PS = $(addprefix $(SRCSPATH), $(SRCSNAME_PS))
 OBJSNAME_PS = $(SRCSNAME_PS:.c=.o)

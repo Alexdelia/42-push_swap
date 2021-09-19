@@ -6,38 +6,45 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 22:35:37 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/03 22:46:27 by adelille         ###   ########.fr       */
+/*   Updated: 2021/07/21 22:45:09 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-void	ft_mt_s(t_markup *mt, int type)
+static void	ft_swap(t_mt *s1, t_mt *s2, t_markup *ma)
 {
-	t_mt	*tmp;
+	t_mt	*prev;
+	t_mt	*next;
 
-	if (type == MT_A)
-	{
-		if (mt->a == NULL || mt->a->next == NULL)
-			return ;
-		tmp = mt->a;
-		mt->a = tmp->next;
-		tmp->next = tmp->next->next;
-		mt->a->next = tmp;
-	}
-	else if (type == MT_B)
-	{
-		if (mt->b == NULL || mt->b->next == NULL)
-			return ;
-		tmp = mt->b;
-		mt->b = tmp->next;
-		tmp->next = tmp->next->next;
-		mt->b->next = tmp;
-	}
+	prev = s1->prev;
+	next = s2->next;
+	prev->next = s2;
+	s2->prev = prev;
+	s1->next = next;
+	next->prev = s1;
+	s2->next = s1;
+	s1->prev = s2;
+	ma->head = s2;
 }
 
-void	ft_mt_ss(t_markup *mt)
+void	ft_mt_sx(t_markup *ma,char *name, t_arg_list *arg_list)
 {
-	ft_mt_s(mt, MT_A);
-	ft_mt_s(mt, MT_B);
+	if (ma && ma->head && ma->size >= 2)
+		ft_swap(ma->head, ma->head->next, ma);
+	if (name && !arg_list)
+		ft_ps(name);
+	if (name && arg_list)
+		ft_add_command(arg_list, ft_create_command(name));
+}
+
+void	ft_mt_ss(t_markup *a, t_markup *b,
+		char *name, t_arg_list *arg_list)
+{
+	ft_mt_sx(a, NULL, NULL);
+	ft_mt_sx(b, NULL, NULL);
+	if (name && !arg_list)
+		ft_ps(name);
+	if (name && arg_list)
+		ft_add_command(arg_list, ft_create_command(name));
 }

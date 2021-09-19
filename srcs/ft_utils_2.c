@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_greater.c                                  :+:      :+:    :+:   */
+/*   ft_utils_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/01 13:44:26 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/20 22:46:07 by adelille         ###   ########.fr       */
+/*   Created: 2021/07/19 17:43:35 by adelille          #+#    #+#             */
+/*   Updated: 2021/07/19 17:44:49 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int	ft_sort_greater(t_arg *arg, int print)
+int	ft_max(int x, int y)
 {
-	t_markup	gr;
-
-	ft_init_markup(&gr, arg, 1);
-	return (ft_sort_markup(&gr, 1, print)); // remember to free in
+	if (x > y)
+		return (x);
+	return (y);
 }

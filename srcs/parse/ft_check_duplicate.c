@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fill_index_keep.c                               :+:      :+:    :+:   */
+/*   ft_check_duplicate.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/01 14:42:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/02 14:20:26 by adelille         ###   ########.fr       */
+/*   Created: 2021/07/06 15:54:25 by adelille          #+#    #+#             */
+/*   Updated: 2021/07/21 22:54:52 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-void	ft_fill_index_keep(t_mt **lst)
+void	ft_check_duplicate(t_markup	*ma)
 {
-	int	index;
+	int		i;
+	t_mt	*x;
+	t_mt	*y;
 
-	index = -1;
-	while (*lst)
+	i = 0;
+	x = ma->head;
+	while (i < ma->size)
 	{
-		if ((*lst)->index == index + 1)
+		y = x->next;
+		while (y != x)
 		{
-			(*lst)->keep = TRUE;
-			index = (*lst)->index;
+			if (x->nb == y->nb)
+				ft_exit("Error: One int is present multiple times\n");
+			y = y->next;
 		}
-		else
-			(*lst)->keep = FALSE;
-		*lst = (*lst)->next;
+		x = x->next;
+		i++;
 	}
 }

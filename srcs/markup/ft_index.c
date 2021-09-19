@@ -1,41 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mt_min.c                                        :+:      :+:    :+:   */
+/*   ft_index.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/01 14:53:49 by adelille          #+#    #+#             */
-/*   Updated: 2021/05/20 22:44:34 by adelille         ###   ########.fr       */
+/*   Created: 2021/07/12 15:01:44 by adelille          #+#    #+#             */
+/*   Updated: 2021/07/21 22:47:24 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int	ft_mt_min(t_mt *mt)
+static t_mt	*ft_next_min(t_markup *ma)
 {
-	int	min;
+	int		i;
+	int		b_min;
+	t_mt	*min;
+	t_mt	*tmp;
 
-	min = INT_MAX;
-	while (mt)
+	min = NULL;
+	if (ma)
 	{
-		if (mt->nb < min)
-			min = mt->nb;
-		mt = mt->next;
+		i = 0;
+		b_min = FALSE;
+		tmp = ma->head;
+		while (i < ma->size)
+		{
+			if ((tmp->index == -1) && (!b_min || tmp->nb < min->nb))
+			{
+				b_min = TRUE;
+				min = tmp;
+			}
+			i++;
+			tmp = tmp->next;
+		}
 	}
 	return (min);
 }
 
-int	ft_mt_nextmin(t_mt *mt, int over)
+void	ft_index(t_markup *ma)
 {
-	int	min;
+	int		index;
+	t_mt	*mt;
 
-	min = INT_MAX;
+	index = 0;
+	mt = ft_next_min(ma);
 	while (mt)
 	{
-		if (mt->nb < min && mt->nb > over)
-			min = mt->nb;
-		mt = mt->next;
+		mt->index = index++;
+		mt = ft_next_min(ma);
 	}
-	return (min);
 }
