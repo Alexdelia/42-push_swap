@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 13:43:14 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/13 13:18:22 by adelille         ###   ########.fr       */
+/*   Updated: 2021/09/13 18:54:35 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <limits.h>
 
-//# define OPEN_MAX 1024
+# define OPEN_MAX 1024
 # define BUFFER_SIZE 1024
 
 int		get_next_line(int fd, char **line);
