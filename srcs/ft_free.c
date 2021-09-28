@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/19 13:43:14 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/13 18:54:35 by adelille         ###   ########.fr       */
+/*   Created: 2021/09/28 15:45:55 by adelille          #+#    #+#             */
+/*   Updated: 2021/09/28 15:50:14 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
+#include "ps.h"
 
-# define OPEN_MAX 1024
-# define BUFFER_SIZE 1024
+int	ft_free_stack(t_stack **stack)
+{
+	t_stack	*s;
+	t_stack	*next;
 
-int		get_next_line(int fd, char **line);
+	s = *stack;
+	while (s)
+	{
+		next = s->next;
+		free(s);
+		s = next;
+	}
+	*stack = NULL;
+	return (1);
+}
 
-char	*gnl_ft_strjoin(char *s1, char *s2);
-char	*gnl_ft_substr(char const *s, unsigned int start, size_t len);
-char	*gnl_ft_strdup(const char *s);
-
-size_t	ft_strlen(const char *str);
-
-#endif
+int	ft_free_data(t_data *d)
+{
+	ft_free_stack(&(d->a));
+	ft_free_stack(&(d->b));
+	return (1);
+}
