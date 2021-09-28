@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/28 14:54:12 by adelille         ###   ########.fr       */
+/*   Updated: 2021/09/28 16:17:05 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_stack
 	int				index;
 	int				keep;
 	struct s_stack	*next;
+	struct s_stack	*next_sort;
 }					t_stack;
 
 typedef struct s_data

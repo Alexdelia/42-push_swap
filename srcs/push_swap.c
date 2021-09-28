@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 19:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/28 15:03:24 by adelille         ###   ########.fr       */
+/*   Updated: 2021/09/28 15:45:31 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (ft_pserc("Error: Not enough argument\n", RED) * 0 + 1);
 	if (ft_arg(ac, av, &d) == FALSE)
-		return (1);
+		return (ft_clear_all(d));
 	//ft_check_duplicate((ma_index = ft_parse(ac, av)));
 	ft_index(ma_index);
 	ft_markup_option(ma_index, &ft_markup_index);
