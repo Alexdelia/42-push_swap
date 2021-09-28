@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/13 13:21:26 by adelille         ###   ########.fr       */
+/*   Updated: 2021/09/28 14:54:12 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,59 +24,19 @@
 # define R_UP	1
 # define R_DOWN	-1
 
-typedef struct s_arg
+typedef struct s_stack
 {
-	char			*name;
-	struct s_arg	*next;
-}					t_arg;
+	int				data;
+	int				index;
+	int				keep;
+	struct s_stack	*next;
+}					t_stack;
 
-typedef struct s_arg_list
+typedef struct s_data
 {
-	int			size;
-	t_arg		*head;
-}				t_arg_list;
-
-typedef struct s_markup_list
-{
-	int						nb;
-	int						index;
-	int						keep;
-	struct s_markup_list	*prev;
-	struct s_markup_list	*next;
-}							t_mt;
-
-typedef struct s_markup
-{
-	int			size;
-	int			pairs;
-	t_mt		*head;
-	t_mt		*markup_head;
-}				t_markup;
-
-typedef struct s_solve_b_shift
-{
-	t_mt	*mt_a;
-	t_mt	*mt_b;
-	int		dir_a;
-	int		dir_b;
-	int		size;
-	int		set;
-}			t_sbs;
-
-typedef struct s_rotate_size
-{
-	int		ra;
-	int		rra;
-	int		rb;
-	int		rrb;
-}			t_rxs;
-
-typedef struct s_b_to_a
-{
-	int			b;
-	int			a;
-	int			r;
-}				t_b_to_a;
+	t_stack	*a;
+	t_stack	*b;
+}			t_data;
 
 void	ft_check_duplicate(t_markup	*ma);
 
