@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/25 19:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/29 16:01:43 by adelille         ###   ########.fr       */
+/*   Created: 2021/09/29 16:02:44 by adelille          #+#    #+#             */
+/*   Updated: 2021/09/29 16:05:09 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int	main(int ac, char **av)
+int	ft_is_sort(t_data *d)
 {
-	t_data	d;
+	int		prev;
+	t_stack	*s;
 
-	d.a = NULL;
-	d.b = NULL;
-	if (ac < 2)
-		return (ft_pserc("Error: Not enough argument\n", RED) * 0 + 1);
-	if (ft_arg(ac, av, &d) == FALSE)
-		return (ft_free_data(&d));
-	if (ft_is_sort(&d) == FALSE)
+	if (d->b)
+		return (FALSE);
+	if (!d->a)
+		return (TRUE);
+	s = d->a;
+	prev = s->data;
+	while (s)
 	{
-		
+		if (prev > s->data)
+			return (FALSE);
+		prev = s->data;
+		s = s->next;
 	}
-
-	/*ft_free_arg_list(arg_index);
-	ft_free_arg_list(arg_gt);*/
-	ft_free_data(&d);
-
-	return (0);
+	return (TRUE);
 }
