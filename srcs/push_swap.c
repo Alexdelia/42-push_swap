@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 19:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/29 16:01:43 by adelille         ###   ########.fr       */
+/*   Updated: 2021/09/29 16:20:40 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	main(int ac, char **av)
 {
 	t_data	d;
+	t_stack	*sorted_index;
 
 	d.a = NULL;
 	d.b = NULL;
@@ -24,12 +25,17 @@ int	main(int ac, char **av)
 		return (ft_free_data(&d));
 	if (ft_is_sort(&d) == FALSE)
 	{
-		
+		sorted_index = (d.a);
+		// get sorted stack example
+		ft_stack_sort(&sorted_index);
+		// index based on sorted stack
+		ft_indexing(sorted_index, &d);
+		// solve
 	}
 
 	/*ft_free_arg_list(arg_index);
 	ft_free_arg_list(arg_gt);*/
 	ft_free_data(&d);
-
+	sorted_index = NULL;
 	return (0);
 }
