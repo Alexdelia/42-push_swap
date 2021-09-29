@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:34:23 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/13 13:36:56 by adelille         ###   ########.fr       */
+/*   Updated: 2021/09/29 16:26:06 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	ft_isspace_s(int c)
 {
-	return (c == '\t' ||
-			c == '\n' ||
-			c == '\v' ||
-			c == '\f' ||
-			c == '\r' ||
-			c == ' ');
+	return (c == '\t'
+		|| c == '\n'
+		|| c == '\v'
+		|| c == '\f'
+		|| c == '\r'
+		|| c == ' ');
 }
 
 static int	ft_isdigit_s(int c)
@@ -47,8 +47,8 @@ int	ft_isint_s(const char *str, int bool)
 	while (ft_isdigit_s(str[i]) && ++digits)
 	{
 		if (((res > border
-				|| (res == border && (str[i] - '0') > 7)) && sign == 1)
-				|| ((res > border || (res == border && (str[i] - '0') > 8))
+					|| (res == border && (str[i] - '0') > 7)) && sign == 1)
+			|| ((res > border || (res == border && (str[i] - '0') > 8))
 				&& sign == -1))
 			return (FALSE);
 		res = res * 10 + (str[i++] - '0');
