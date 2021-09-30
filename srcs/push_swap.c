@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 19:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/29 16:20:40 by adelille         ###   ########.fr       */
+/*   Updated: 2021/09/30 18:13:15 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	main(int ac, char **av)
 		// index based on sorted stack
 		ft_indexing(sorted_index, &d);
 		// solve
+		if (d.max == 5)
+			
 	}
 
 	/*ft_free_arg_list(arg_index);

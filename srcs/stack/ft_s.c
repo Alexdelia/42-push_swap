@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_sort.c                                    :+:      :+:    :+:   */
+/*   ft_s.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/29 16:10:04 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/30 18:16:14 by adelille         ###   ########.fr       */
+/*   Created: 2021/09/30 18:13:45 by adelille          #+#    #+#             */
+/*   Updated: 2021/09/30 18:15:07 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-void	ft_stack_sort(t_stack **head)
+void	ft_s(t_stack **x, t_stack *y)
 {
-	t_stack	*last;
-	t_stack	*prev;
+	t_stack	*tmp;
 
-	prev = NULL;
-	last = *head;
-	while (last && last->next_sort)
-	{
-		if (last->data - last->next_sort->data > 0)
-		{
-			if (perv == NULL)
-				ft_s(head, last);
-			else
-				ft_s(&(prev->next_sort), last);
-			last = *head;
-			prev = NULL;
-		}
-		else
-		{
-			prev = last;
-			last = last->next_sort;
-		}
-	}
+	tmp = *x;
+	*x = y->next_sort;
+	tmp->next_sort = y->next_sort->next_sort;
+	(*x)->next_sort = tmp;
 }
