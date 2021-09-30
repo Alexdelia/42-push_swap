@@ -6,13 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 18:17:27 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/30 18:26:17 by adelille         ###   ########.fr       */
+/*   Updated: 2021/09/30 18:56:14 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-void	ft_p(t_stack **s1, t_stack **s2)
+static void	ft_p(t_stack **s1, t_stack **s2)
 {
 	t_stack	*head;
 

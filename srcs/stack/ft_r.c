@@ -6,13 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 18:29:35 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/30 18:34:04 by adelille         ###   ########.fr       */
+/*   Updated: 2021/09/30 18:55:57 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-void	ft_r(t_stack **s)
+static void	ft_ru(t_stack **s)
 {
 	t_stack	*head;
 	t_stack	*tmp;
@@ -30,14 +30,22 @@ void	ft_r(t_stack **s)
 
 void	ft_ra(t_data *d)
 {
-	ft_r(&(d->a));
+	ft_ru(&(d->a));
 	if (d->print)
 		ft_ps("ra\n");
 }
 
 void	ft_rb(t_data *d)
 {
-	ft_r(&(d->b));
+	ft_ru(&(d->b));
 	if (d->print)
 		ft_ps("rb\n");
+}
+
+void	ft_rr(t_data *d)
+{
+	ft_ru(&(d->a));
+	ft_ru(&(d->b));
+	if (d->print)
+		ft_ps("rr\n");
 }
