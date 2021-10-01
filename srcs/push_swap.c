@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 19:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/30 18:13:15 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/01 18:44:39 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,9 @@ int	main(int ac, char **av)
 		ft_indexing(sorted_index, &d);
 		// solve
 		if (d.max == 5)
-			
+			ft_solve_5(&d);
+		ft_solve(&d, 1);
 	}
-
-	/*ft_free_arg_list(arg_index);
-	ft_free_arg_list(arg_gt);*/
 	ft_free_data(&d);
 	sorted_index = NULL;
 	return (0);
