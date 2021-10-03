@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 17:43:35 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/19 17:44:49 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/03 22:14:50 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,11 @@ int	ft_max(int x, int y)
 	if (x > y)
 		return (x);
 	return (y);
+}
+
+int	ft_abs(int a)
+{
+	if (a < 0)
+		return (-a);
+	return (a);
 }
