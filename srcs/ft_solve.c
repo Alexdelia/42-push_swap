@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 13:07:58 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/04 21:06:54 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/04 21:23:46 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,9 @@ void	ft_solve(t_data *d, int group)
 	int	distance;
 
 	ft_init_solve(d);
+	while (d->size >= d->big && group <= (d->group_count + 1))
+	{
+		d->tmp = ft_nearest_in_group(d->a, group, d->group_size);
+		//
+	}
 }
