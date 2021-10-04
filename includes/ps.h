@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/29 16:22:40 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/04 21:04:26 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,13 @@ typedef struct s_data
 {
 	t_stack	*a;
 	t_stack	*b;
+	t_stack	*tmp;
 	int		max;
+	int		big;
+	int		size;
+	int		group_count;
+	int		group_size;
+	int		operation_count;
 }			t_data;
 
 void	ft_check_duplicate(t_markup	*ma);
