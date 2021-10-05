@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 13:07:58 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/05 18:55:45 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/05 18:58:43 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_solve(t_data *d, int group)
 		else if (d->group_count == 1)
 			ft_rrr(d);
 		else
-			ft_rotate(d, ft_min(1, ft_max(-1, distance)), 0); // to code
+			ft_rotator(d, ft_min(1, ft_max(-1, distance)), 0); // to code
 	}
 	//
 }
