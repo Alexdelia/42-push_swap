@@ -6,11 +6,29 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 13:07:58 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/04 21:34:47 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/05 18:55:45 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
+
+int	ft_can_swap(t_stack *s)
+{
+	t_stack	s1;
+	t_stack	s2;
+	int		i1;
+	int		i2;
+
+	s1.next = &s2;
+	s1.index = s->next->index;
+	s2.next = s->next->next;
+	s2.index = s->index;
+	i1 = ft_biggest_loop(s, 0);
+	i2 = ft_biggest_loop(&s1, 0);
+	if (i2 > i1)
+			return (TRUE);
+	return (FALSE);
+}
 
 static void	ft_init_solve(t_data *d)
 {
