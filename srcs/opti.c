@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 22:06:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/04 21:27:58 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/06 15:48:59 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,13 @@ int	ft_distance_to_top(t_stack *a, int index)
 	if (i > size / 2)
 		i -= size;
 	return (i);
+}
+
+int	ft_distance_to_index(int index, int size)
+{
+	if (index >= size / 2)
+			index -= size;
+	return (index);
 }
 
 t_stack	*ft_nearest_in_group(t_stack *s, int group, int group_size)
