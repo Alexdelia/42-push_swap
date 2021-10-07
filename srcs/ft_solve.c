@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 13:07:58 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/06 15:45:56 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/07 18:15:10 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	ft_init_solve(t_data *d)
 	d->big = ft_biggest_loop(d->a, 1);
 	d->size = ft_stacklen(d->a);
 	d->group_count = ft_max(1, (int)(d->max / 150.0));
-	d->group_size = d->max / d->ground_count;
+	d->group_size = d->max / d->group_count;
 }
 
 void	ft_solve(t_data *d, int group)

@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/07 18:13:54 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/07 18:16:42 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,10 @@ void	ft_push_back_to_a(t_data *d);
 int		ft_biggest_loop(t_stack *start, int set);
 int		ft_distance_to_top(t_stack *a, int index);
 int		ft_distance_to_index(int index, int size);
+t_stack	*ft_nearest_in_group(t_stack *s, int group, int group_size);
 t_stack	*ft_get_last(t_stack *s);
+int		ft_stacklen(t_stack *s);
+int		ft_has_index(t_stack *s, int index);
 
 void	ft_sa(t_data *d);
 void	ft_sb(t_data *d);
