@@ -1,0 +1,23 @@
+ includes/ps.h             | 10 +++++-
+ libft/get_next_line.h     |  4 +--
+ srcs/case_5.c             | 53 +++++++++++++++++++++++++++++
+ srcs/ft_free.c            | 36 ++++++++++++++++++++
+ srcs/ft_indexing.c        | 26 +++++++++++++++
+ srcs/ft_is_sort.c         | 34 +++++++++++++++++++
+ srcs/ft_loop.c            | 66 ++++++++++++++++++++++++++++++++++++
+ srcs/ft_push_back_to_a.c  | 85 +++++++++++++++++++++++++++++++++++++++++++++++
+ srcs/ft_solve.c           | 68 +++++++++++++++++++++++++++++++++++++
+ srcs/ft_stack_sort.c      | 49 +++++++++++++++++++++++++++
+ srcs/ft_utils_2.c         | 16 ++++++++-
+ srcs/opti.c               | 80 ++++++++++++++++++++++++++++++++++++++++++++
+ srcs/parse/ft_arg.c       | 43 ++++++++++++++++++++++++
+ srcs/parse/ft_isint.c     | 18 +++++-----
+ srcs/push_swap.c          | 43 ++++++++++++------------
+ srcs/stack/ft_get_last.c  | 22 ++++++++++++
+ srcs/stack/ft_p.c         | 42 +++++++++++++++++++++++
+ srcs/stack/ft_push_init.c | 41 +++++++++++++++++++++++
+ srcs/stack/ft_r.c         | 51 ++++++++++++++++++++++++++++
+ srcs/stack/ft_rotator.c   | 54 ++++++++++++++++++++++++++++++
+ srcs/stack/ft_rr.c        | 53 +++++++++++++++++++++++++++++
+ srcs/stack/ft_s.c         | 49 +++++++++++++++++++++++++++
+ 22 files changed, 909 insertions(+), 34 deletions(-)

@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/04 21:04:26 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/07 17:52:34 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,51 +46,37 @@ typedef struct s_data
 	int		operation_count;
 }			t_data;
 
+/*
 void	ft_check_duplicate(t_markup	*ma);
-
 int		ft_arg(t_arg *arg, int ac, char **av);
-int		ft_is_int(char *str);
 int		ft_isnt_in(t_list *lst, int nb);
 int		ft_max_min_in(t_list *a, char *str);
 int		ft_max_min(char *str);
-
 int		ft_checking(t_arg *arg);
-
 int		ft_sort_3(t_arg *arg);
-
 t_mt	*ft_mt_new(int nb);
 void	ft_mt_add(t_markup *ma, t_mt *new);
-
 int		ft_mt_size(t_mt *lst);
 int		ft_mt_min(t_mt *mt);
 int		ft_mt_nextmin(t_mt *mt, int over);
 int		ft_mt_readindex(t_mt *mt);
 void	ft_mt_free(t_mt *mt);
 void	ft_mt_freeall(t_mt **mt);
-
 t_markup	*ft_init_stack(void);
 t_arg_list	*ft_init_arg_list(void);
-
 t_arg	*ft_create_command(char *name);
 void	ft_add_command(t_arg_list *arg_list, t_arg *arg);
 void	ft_print_commands(t_arg_list *arg_list);
 void	ft_free_arg_list(t_arg_list *arg_list);
-
 t_markup	*ft_parse(int ac, char **av);
-int	ft_isint_s(const char *str, int bool);
-int	ft_isnum_s(char *str, int base);
-int	ft_isspace_s(int c);
 void	ft_index(t_markup *ma);
-
 void	ft_markup_option(t_markup *ma, int (*ft_markup_s)(t_markup *, t_mt *));
 int		ft_markup_index(t_markup *ma, t_mt *head);
 int		ft_markup_gt(t_markup *ma, t_mt *head);
-
 t_arg_list	*ft_solve(t_markup *a, int (*ma)(t_markup *, t_mt *));
 void	ft_solve_a(t_markup *a, t_markup *b, int (*ft_ma)(t_markup *, t_mt *), t_arg_list *arg_list);
 void	ft_solve_b(t_markup *a, t_markup *b, t_arg_list *arg_list);
 void	ft_find_dir(t_markup *a, t_markup *b, t_sbs *sbs);
-
 void	ft_mt_sx(t_markup *ma, char *name, t_arg_list *arg_list);
 void	ft_mt_ss(t_markup *a, t_markup *b, char *name, t_arg_list *arg_list);
 void	ft_mt_p(t_markup *dst, t_markup *src, char *name, t_arg_list *arg_list);
@@ -98,19 +84,15 @@ void	ft_mt_rx(t_markup *ma, char *name, t_arg_list *arg_list);
 void	ft_mt_rr(t_markup *a, t_markup *b,  char *name, t_arg_list *arg_list);
 void	ft_mt_rrx(t_markup *ma, char *name, t_arg_list *arg_list);
 void	ft_mt_rrr(t_markup *a, t_markup *b,  char *name, t_arg_list *arg_list);
-
 void	ft_push(t_markup *ma, t_mt *mt);
 t_mt	*ft_pop(t_markup *ma);
-
 int		ft_check_sort(t_list *lst);
 int		ft_check_unsort(t_list *lst);
-
 int		ft_op_sa(t_arg *arg);
 int		ft_op_sb(t_arg *arg);
 int		ft_op_p(t_list **dst, t_list **src);
 int		ft_op_r(t_list **lst);
 int		ft_op_rr(t_list **lst);
-
 int		ft_lst_color(t_arg arg, int ga, int gb);
 int		ft_lst_color_sa(t_arg arg);
 int		ft_lst_color_sb(t_arg arg);
@@ -119,13 +101,19 @@ void	ft_put_row(t_arg arg, int ga, int gb, int i);
 void	ft_put_row_sa(t_arg arg, int i);
 void	ft_put_row_sb(t_arg arg, int i);
 void	ft_put_row_ss(t_arg arg, int i);
+void	*ft_memalloc(size_t size);
+int		ft_visual(char **av);
+void	ft_free_stack(t_markup *ma);
+*/
+
+int		ft_is_int(char *str);
+int		ft_isint_s(const char *str, int bool);
+int		ft_isnum_s(char *str, int base);
+int		ft_isspace_s(int c);
 
 void	ft_exit(char *text);
 int		ft_error(char *text);
-void	*ft_memalloc(size_t size);
 long	ft_atol(char *str);
-int		ft_visual(char **av);
 int		ft_max(int x, int y);
-void	ft_free_stack(t_markup *ma);
 
 #endif

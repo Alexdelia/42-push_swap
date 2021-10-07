@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/07/23 16:58:49 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/07 17:49:15 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,19 +67,17 @@ OBJSNAME_CH = $(SRCSNAME_CH:.c=.o)
 OBJS_CH = $(OBJSPATH_CH)*.o
 
 SRCSNAME_PS = push_swap.c \
-				parse/ft_parse.c parse/ft_check_duplicate.c \
+			  	parse/ft_arg.c \
 				parse/ft_isint.c parse/ft_isnum.c \
-				checker/ft_arg_utils.c \
-				markup/arg_list_command.c markup/ft_index.c \
-				markup/ft_markup_option.c \
-				markup/ft_mt_add.c markup/ft_mt_new.c \
-				markup/mt_operation/ft_mt_s.c \
-				markup/mt_operation/ft_mt_p.c \
-				markup/mt_operation/ft_mt_r.c \
-				markup/mt_operation/ft_push_pop.c \
-				solve/ft_solve.c solve/ft_solve_a.c solve/ft_solve_b.c \
-				ft_find_direction.c \
-				ft_init.c ft_utils.c ft_utils_2.c
+				ft_indexing.c case_5.c \
+				ft_solve.c opti.c ft_stack_sort.c \
+				ft_loop ft_push_back_to_a.c \
+				stack/ft_s.c stack/ft_p.c \
+				stack/ft_r.c stack/ft_rr.c \
+				stack/ft_rotator.c stack/ft_push_init.c \
+				stack/ft_get_last.c \
+				ft_is_sort.c ft_free.c \
+				ft_utils.c ft_utils_2.c \
 
 SRCS_PS = $(addprefix $(SRCSPATH), $(SRCSNAME_PS))
 OBJSNAME_PS = $(SRCSNAME_PS:.c=.o)
