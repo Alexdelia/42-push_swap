@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 16:10:04 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/30 18:19:18 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/07 18:12:25 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_stack_sort(t_stack **head)
 	{
 		if (last->data - last->next_sort->data > 0)
 		{
-			if (perv == NULL)
+			if (prev == NULL)
 				ft_swap_stack(head, last);
 			else
 				ft_swap_stack(&(prev->next_sort), last);

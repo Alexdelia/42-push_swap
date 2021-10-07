@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/07 17:55:12 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/07 18:01:03 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,8 +67,7 @@ OBJSNAME_CH = $(SRCSNAME_CH:.c=.o)
 OBJS_CH = $(OBJSPATH_CH)*.o
 
 SRCSNAME_PS = push_swap.c \
-			  	parse/ft_arg.c \
-				parse/ft_isint.c parse/ft_isnum.c \
+			  	ft_arg.c \
 				ft_indexing.c case_5.c \
 				ft_solve.c opti.c ft_stack_sort.c \
 				ft_loop.c ft_push_back_to_a.c \
@@ -77,6 +76,7 @@ SRCSNAME_PS = push_swap.c \
 				stack/ft_rotator.c stack/ft_push_init.c \
 				stack/ft_get_last.c \
 				ft_is_sort.c ft_free.c \
+				ft_isint.c ft_isnum.c \
 				ft_utils.c ft_utils_2.c \
 
 SRCS_PS = $(addprefix $(SRCSPATH), $(SRCSNAME_PS))

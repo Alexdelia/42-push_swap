@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/07 17:52:34 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/07 18:13:54 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,43 @@ typedef struct s_data
 	int		group_count;
 	int		group_size;
 	int		operation_count;
+	int		print;
 }			t_data;
+
+int		ft_arg(int ac, char **av, t_data *d);
+int		ft_push_init(t_stack **s, int data, int index);
+
+void	ft_rotator(t_data *d, int ra, int rb);
+void	ft_push_back_to_a(t_data *d);
+
+int		ft_biggest_loop(t_stack *start, int set);
+int		ft_distance_to_top(t_stack *a, int index);
+int		ft_distance_to_index(int index, int size);
+t_stack	*ft_get_last(t_stack *s);
+
+void	ft_sa(t_data *d);
+void	ft_sb(t_data *d);
+void	ft_ss(t_data *d);
+void	ft_pa(t_data *d);
+void	ft_pb(t_data *d);
+void	ft_ra(t_data *d);
+void	ft_rb(t_data *d);
+void	ft_rr(t_data *d);
+void	ft_rra(t_data *d);
+void	ft_rrb(t_data *d);
+void	ft_rrr(t_data *d);
+
+int		ft_is_int(char *str);
+int		ft_isint_s(const char *str, int bool);
+int		ft_isnum_s(char *str, int base);
+int		ft_isspace_s(int c);
+
+void	ft_exit(char *text);
+int		ft_error(char *text);
+long	ft_atol(char *str);
+int		ft_max(int x, int y);
+int		ft_min(int x, int y);
+int		ft_abs(int a);
 
 /*
 void	ft_check_duplicate(t_markup	*ma);
@@ -105,15 +141,5 @@ void	*ft_memalloc(size_t size);
 int		ft_visual(char **av);
 void	ft_free_stack(t_markup *ma);
 */
-
-int		ft_is_int(char *str);
-int		ft_isint_s(const char *str, int bool);
-int		ft_isnum_s(char *str, int base);
-int		ft_isspace_s(int c);
-
-void	ft_exit(char *text);
-int		ft_error(char *text);
-long	ft_atol(char *str);
-int		ft_max(int x, int y);
 
 #endif

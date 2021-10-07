@@ -6,11 +6,22 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 16:08:40 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/07 17:58:16 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/07 18:05:42 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
+
+static int	ft_in_stack(t_stack *s, int data)
+{
+	while (s)
+	{
+		if (s->data == data)
+			return (TRUE);
+		s = s->next;
+	}
+	return (0);
+}
 
 int	ft_push_init(t_stack **s, int data, int index)
 {
@@ -30,7 +41,7 @@ int	ft_push_init(t_stack **s, int data, int index)
 	elem->next_sort = NULL;
 	if (last == NULL)
 	{
-		*stack = elem;
+		*s = elem;
 		return (TRUE);
 	}
 	while (last->next)
