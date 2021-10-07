@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 22:06:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/06 15:48:59 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/07 19:12:54 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	ft_distance_to_top(t_stack *a, int index)
 	int	size;
 
 	i = 0;
+	size = ft_stacklen(a);
 	while (a)
 	{
 		if (a->index == index)
@@ -38,7 +39,6 @@ int	ft_distance_to_top(t_stack *a, int index)
 		a = a->next;
 		i++;
 	}
-	size = ft_stacklen(a);
 	if (i > size / 2)
 		i -= size;
 	return (i);

@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:44:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/07 18:55:59 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/07 19:14:49 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_solve_5(t_data *d)
 		{
 			if (s->index == 0 || s->index == d->max - 1)
 			{
-				distance = ft_distance_to_top(d->a, s->index); // to code
+				distance = ft_distance_to_top(d->a, s->index);
 				if (ft_abs(distance) < ft_abs(min))
 					min = distance;
 			}
