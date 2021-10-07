@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/07 18:01:03 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/07 19:04:49 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,16 +50,6 @@ OBJSPATH_PS =	./objs_push_swap/
 INC =			./includes/
 
 SRCSNAME_CH = checker/checker.c \
-				checker/ft_arg.c \
-				checker/ft_arg_utils.c \
-				checker/ft_checking.c \
-				checker/ft_check_sort.c \
-				checker/ft_operation/ft_op_s.c \
-				checker/ft_operation/ft_op_p.c \
-				checker/ft_operation/ft_op_r.c \
-				checker/ft_lst_color.c \
-				checker/ft_put_row.c \
-				ft_utils.c
 
 SRCS_CH = $(addprefix $(SRCSPATH), $(SRCSNAME_CH))
 OBJSNAME_CH = $(SRCSNAME_CH:.c=.o)
