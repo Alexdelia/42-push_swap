@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:44:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/01 18:52:13 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/07 18:55:59 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_solve_5(t_data *d)
 	int		min;
 	int		distance;
 
-	while (ft_has_index(d->a, 0) || ft_had_index(d->a, d->max - 1))
+	while (ft_has_index(d->a, 0) || ft_has_index(d->a, d->max - 1))
 	{
 		s = d->a;
 		min = INT_MAX;

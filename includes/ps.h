@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/07 18:16:42 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/07 18:58:57 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,6 @@
 # include "libft.h"
 // to remove
 # include <stdio.h>
-
-# define MT_A	0
-# define MT_B	1
-
-# define R_UP	1
-# define R_DOWN	-1
 
 typedef struct s_stack
 {
@@ -50,8 +44,15 @@ typedef struct s_data
 int		ft_arg(int ac, char **av, t_data *d);
 int		ft_push_init(t_stack **s, int data, int index);
 
+void	ft_indexing(t_stack *sorted_index, t_data *d);
+void	ft_solve_5(t_data *d);
+void	ft_stack_sort(t_stack **head);
+void	ft_solve(t_data *d, int group);
+
 void	ft_rotator(t_data *d, int ra, int rb);
 void	ft_push_back_to_a(t_data *d);
+
+int		ft_free_data(t_data *d);
 
 int		ft_biggest_loop(t_stack *start, int set);
 int		ft_distance_to_top(t_stack *a, int index);
@@ -60,6 +61,7 @@ t_stack	*ft_nearest_in_group(t_stack *s, int group, int group_size);
 t_stack	*ft_get_last(t_stack *s);
 int		ft_stacklen(t_stack *s);
 int		ft_has_index(t_stack *s, int index);
+int		ft_is_sort(t_data *d);
 
 void	ft_sa(t_data *d);
 void	ft_sb(t_data *d);
