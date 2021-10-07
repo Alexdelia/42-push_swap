@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 15:00:30 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/28 16:07:58 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/07 17:59:09 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_arg(int ac, char **av, t_data *d)
 	{
 		if (ft_arg_error(av[x]) == FALSE)
 			return (FALSE);
-		if (ft_push_init(&(d->a), ft_atoi(av[x]), -1, d) == FALSE)
+		if (ft_push_init(&(d->a), ft_atoi(av[x]), -1) == FALSE)
 			return (FALSE);
 		x++;
 	}

@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/07 17:49:15 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/07 17:55:12 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ SRCSNAME_PS = push_swap.c \
 				parse/ft_isint.c parse/ft_isnum.c \
 				ft_indexing.c case_5.c \
 				ft_solve.c opti.c ft_stack_sort.c \
-				ft_loop ft_push_back_to_a.c \
+				ft_loop.c ft_push_back_to_a.c \
 				stack/ft_s.c stack/ft_p.c \
 				stack/ft_r.c stack/ft_rr.c \
 				stack/ft_rotator.c stack/ft_push_init.c \

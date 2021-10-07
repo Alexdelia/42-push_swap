@@ -6,13 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 16:08:40 by adelille          #+#    #+#             */
-/*   Updated: 2021/09/28 16:18:31 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/07 17:58:16 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int	ft_push_init(t_stack **s, int data, int index, t_data *d)
+int	ft_push_init(t_stack **s, int data, int index)
 {
 	t_stack	*elem;
 	t_stack	*last;
