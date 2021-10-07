@@ -1,5 +1,0 @@
-crash, a->markup_head is NULL
-so a->markup_head->index/index->markup_head crash
-
-segfault with neg number
-doesn't give a message with non int input
