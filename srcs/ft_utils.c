@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 18:48:17 by adelille          #+#    #+#             */
-/*   Updated: 2021/07/06 16:05:40 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/08 11:26:52 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ long	ft_atol(char *str)
 		neg = -neg;
 		i++;
 	}
-	while (str[i] && i < 15)
+	while (str[i] && i < 19)
 	{
 		res = res * 10 + (str[i] + '0');
 		i++;
