@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 19:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/09 19:28:14 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/09 19:34:59 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(int ac, char **av)
 
 	d.a = NULL;
 	d.b = NULL;
+	d.print = TRUE;
 	if (ac < 2)
 		return (ft_pserc("Error: Not enough argument\n", RED) * 0 + 1);
 	if (ft_arg(ac, av, &d) == FALSE)
