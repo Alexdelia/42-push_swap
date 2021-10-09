@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 15:44:44 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/06 15:57:41 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/09 19:29:56 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_insert_distance(t_stack *s, int t, int size)
 	while (c)
 	{
 		if ((p->index > c->index && (t < c->index || t > p->index))
-				|| (t > p->index && t < c->index))
+			|| (t > p->index && t < c->index))
 		{
 			c_max[0] = i;
 			if (c_max[0] > size / 2)

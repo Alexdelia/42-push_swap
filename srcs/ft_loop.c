@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 21:07:08 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/04 21:19:36 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/09 19:29:15 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_loop_stack(t_stack *s, t_stack *start, int set)
 	while (loop)
 	{
 		if (set)
-				loop->keep = 0;
+			loop->keep = 0;
 		if (loop->index > max_index)
 		{
 			max_index = loop->index;
@@ -36,7 +36,7 @@ int	ft_loop_stack(t_stack *s, t_stack *start, int set)
 		if (loop == NULL)
 			loop = s;
 		if (loop == start)
-			break;
+			break ;
 	}
 	return (i);
 }
@@ -61,6 +61,6 @@ int	ft_biggest_loop(t_stack *start, int set)
 		s = s->next;
 	}
 	if (set)
-			ft_loop_stack(start, keep, 1);
+		ft_loop_stack(start, keep, 1);
 	return (max);
 }

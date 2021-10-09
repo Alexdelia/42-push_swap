@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 19:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/01 18:44:39 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/09 19:28:14 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,8 @@ int	main(int ac, char **av)
 	if (ft_is_sort(&d) == FALSE)
 	{
 		sorted_index = (d.a);
-		// get sorted stack example
 		ft_stack_sort(&sorted_index);
-		// index based on sorted stack
 		ft_indexing(sorted_index, &d);
-		// solve
 		if (d.max == 5)
 			ft_solve_5(&d);
 		ft_solve(&d, 1);

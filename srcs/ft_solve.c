@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 13:07:58 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/07 18:15:10 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/09 19:27:44 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_can_swap(t_stack *s)
 	i1 = ft_biggest_loop(s, 0);
 	i2 = ft_biggest_loop(&s1, 0);
 	if (i2 > i1)
-			return (TRUE);
+		return (TRUE);
 	return (FALSE);
 }
 
@@ -47,9 +47,9 @@ void	ft_solve(t_data *d, int group)
 	{
 		d->tmp = ft_nearest_in_group(d->a, group, d->group_size);
 		if (d->tmp == NULL && ++ group)
-				continue ;
+			continue ;
 		distance = ft_distance_to_top(d->a, d->tmp->index);
-		if (d->a && ft_can_swap(d->a))// to code
+		if (d->a && ft_can_swap(d->a))
 		{
 			ft_sa(d);
 			d->big = ft_biggest_loop(d->a, 1);

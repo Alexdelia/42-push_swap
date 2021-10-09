@@ -6,13 +6,13 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 18:44:54 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/07 19:14:49 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/09 19:29:34 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ps.h"
 
-int		ft_has_index(t_stack *s, int index)
+int	ft_has_index(t_stack *s, int index)
 {
 	while (s)
 	{
