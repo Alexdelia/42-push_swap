@@ -6,14 +6,14 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/10 17:35:18 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/10 17:39:25 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # NAME =	
 CH =	checker
 PS =	push_swap
-CC = 	clang -Wall -Werror -Wextra -g
+CC = 	clang -Wall -Werror -Wextra -O2 #-g
 RM = 	rm -rf
 # FLAGS =	-O2
 
