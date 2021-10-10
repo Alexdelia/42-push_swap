@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/07 19:04:49 by adelille         ###   ########.fr        #
+#    Updated: 2021/10/10 17:35:18 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,13 @@ OBJSPATH_CH =	./objs_checker/
 OBJSPATH_PS =	./objs_push_swap/
 INC =			./includes/
 
-SRCSNAME_CH = checker/checker.c \
+SRCSNAME_CH = checker.c \
+				ft_arg.c ft_is_sort.c \
+				stack/ft_s.c stack/ft_p.c \
+				stack/ft_r.c stack/ft_rr.c \
+				stack/ft_push_init.c \
+				ft_free.c ft_utils.c \
+				ft_isint.c ft_isnum.c
 
 SRCS_CH = $(addprefix $(SRCSPATH), $(SRCSNAME_CH))
 OBJSNAME_CH = $(SRCSNAME_CH:.c=.o)
@@ -67,7 +73,7 @@ SRCSNAME_PS = push_swap.c \
 				stack/ft_get_last.c \
 				ft_is_sort.c ft_free.c \
 				ft_isint.c ft_isnum.c \
-				ft_utils.c ft_utils_2.c \
+				ft_utils.c ft_utils_2.c
 
 SRCS_PS = $(addprefix $(SRCSPATH), $(SRCSNAME_PS))
 OBJSNAME_PS = $(SRCSNAME_PS:.c=.o)

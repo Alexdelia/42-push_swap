@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 15:05:39 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/10 17:28:47 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/10 17:33:08 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 static int	ft_do_op(char *op, t_data *d)
 {
-	if (!ft_strcmp(name, "sa"))
-		swap_a(mem);
-	else if (!ft_strcmp(name, "sb"))
-		swap_b(mem);
-	else if (!ft_strcmp(name, "ss"))
-		swap_b_a(mem);
-	else if (!ft_strcmp(name, "pa"))
-		push_a(mem);
-	else if (!ft_strcmp(name, "pb"))
-		push_b(mem);
-	else if (!ft_strcmp(name, "ra"))
-		rotate_a(mem);
-	else if (!ft_strcmp(name, "rb"))
-		rotate_b(mem);
-	else if (!ft_strcmp(name, "rr"))
-		rotate_b_a(mem);
-	else if (!ft_strcmp(name, "rra"))
-		rev_rotate_a(mem);
-	else if (!ft_strcmp(name, "rrb"))
-		rev_rotate_b(mem);
-	else if (!ft_strcmp(name, "rrr"))
-		rev_rotate_b_a(mem);
+	if (!ft_strcmp(op, "sa"))
+		ft_sa(d);
+	else if (!ft_strcmp(op, "sb"))
+		ft_sb(d);
+	else if (!ft_strcmp(op, "ss"))
+		ft_ss(d);
+	else if (!ft_strcmp(op, "pa"))
+		ft_pa(d);
+	else if (!ft_strcmp(op, "pb"))
+		ft_pb(d);
+	else if (!ft_strcmp(op, "ra"))
+		ft_ra(d);
+	else if (!ft_strcmp(op, "rb"))
+		ft_rb(d);
+	else if (!ft_strcmp(op, "rr"))
+		ft_rr(d);
+	else if (!ft_strcmp(op, "rra"))
+		ft_rra(d);
+	else if (!ft_strcmp(op, "rrb"))
+		ft_rrb(d);
+	else if (!ft_strcmp(op, "rrr"))
+		ft_rrr(d);
 	else
 		return (FALSE);
 	return (TRUE);
@@ -69,7 +69,7 @@ static int	ft_read_operation(t_data *d)
 
 int	main(int ac, char **av)
 {
-	t_data	*d;
+	t_data	d;
 
 	d.a = NULL;
 	d.b = NULL;
