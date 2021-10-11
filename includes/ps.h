@@ -6,7 +6,7 @@
 /*   By: adelille </var/mail/adelille>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 14:58:11 by adelille          #+#    #+#             */
-/*   Updated: 2021/10/09 19:45:30 by adelille         ###   ########.fr       */
+/*   Updated: 2021/10/11 12:32:29 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <limits.h>
 # include "libft.h"
-// to remove
-# include <stdio.h>
 
 typedef struct s_stack
 {
