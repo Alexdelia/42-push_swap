@@ -6,7 +6,7 @@
 #    By: adelille <adelille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/30 19:21:49 by adelille          #+#    #+#              #
-#    Updated: 2021/10/10 17:39:25 by adelille         ###   ########.fr        #
+#    Updated: 2022/03/20 16:33:00 by adelille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,6 @@ CLR =	$(shell tput el 1)
 LBPATH =	./libft/
 LBNAME =	$(LBPATH)libft.a
 LBINC =		-I$(LBPATH)
-LBM =		libm
 
 # **************************************************************************** #
 
@@ -84,29 +83,27 @@ OBJS_PS = $(OBJSPATH_PS)*.o
 
 all: checker push_swap
 
-checker: $(LBM)
+checker: $(LBNAME)
 	@mkdir $(OBJSPATH_CH) 2> /dev/null || true
 	@$(CC) -I$(INC) $(LBINC) -c $(SRCS_CH)
 	@mv *.o $(OBJSPATH_CH)
 	$(CC) $(OBJS_CH) $(LBNAME) -L$(LBPATH) $(LBINC) -I$(INC) -o $(CH)
 	@echo "$(B)$(MAG)$(BEL)\n\t $(CH)\tcompiled!\n$(D)"
 
-push_swap: $(LBM)
+push_swap: $(LBNAME)
 	@mkdir $(OBJSPATH_PS) 2> /dev/null || true
 	@$(CC) -I$(INC) $(LBINC) -c $(SRCS_PS)
 	@mv *.o $(OBJSPATH_PS)
 	@$(CC) $(OBJS_PS) $(LBNAME) -L$(LBPATH) $(LBINC) -I$(INC) -o $(PS)
 	@echo "$(B)$(MAG)$(BEL)\n\t$(PS)\tcompiled!\n$(D)"
 
-$(LBM):
-	@make bonus -C $(LBPATH) -f Makefile
-
-lib:	$(LIBFTM)
+$(LBNAME):
+	@$(MAKE) bonus -C $(LBPATH) -f Makefile
 	@echo "$(B)$(MAG)$(BEL)Libft compiled.$(D)"
 
 clean:
 	@$(RM) $(OBJS_CH) $(OBJS_PS)
-	@make -C $(LBPATH) -f Makefile clean
+	@$(MAKE) -C $(LBPATH) -f Makefile clean
 	@rmdir $(OBJSPATH_CH) 2> /dev/null || true
 	@rmdir $(OBJSPATH_PS) 2> /dev/null || true
 	@echo "$(B)Cleared.$(D)"
@@ -114,10 +111,10 @@ clean:
 
 fclean: clean
 	@$(RM) $(CH) $(PS) *.o
-	@make -C $(LBPATH) -f Makefile fclean
+	@$(MAKE) -C $(LBPATH) -f Makefile fclean
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re, lib, checker, push_swap
+.PHONY: all, clean, fclean, re, checker, push_swap
 
 # **************************************************************************** #
